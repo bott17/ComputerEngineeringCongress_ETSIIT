@@ -133,6 +133,26 @@ footer p {
 /*--------------------------------------------------------------------------------------------*/
 /********* begin MAIN NAV ********/
 /*--------------------------------------------------------------------------------------------*/
+#navheader{
+	width: 100%;
+	height: 150px;
+}
+#navheader #izq{
+	float: left;
+	width: 70%;
+	height: 100%;
+	background-color: lime;	
+}
+#izq a {
+	por aqui
+	background-color: cyan;
+}
+#navheader #der{
+	float:right;
+	width: 30%;
+	height: 100%;
+	background-color: red;
+}
 #navcontainer {
 	float:right;
 }
