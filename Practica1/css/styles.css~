@@ -90,7 +90,6 @@ padding:20px 0;
 	float: right; 
 	width: 290px;
 	padding:20px 0 20px 0;
-	background: green;
 }
 .sidebar1 li {
 	list-style:none;
