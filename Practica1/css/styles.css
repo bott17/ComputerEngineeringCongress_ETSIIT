@@ -114,6 +114,22 @@ padding:20px 0;
 	border:2px solid #FFFFFF;
 	box-shadow: 0px 3px 4px 0px #939393;
 }
+#tituloContent{
+	font-size: 30pt;
+}
+.mainContent ul{
+	font-size: 20pt;	
+	padding: 20px;
+	background:url(../images/contentBackground.jpg) repeat;	
+	border:1px solid #bbbbbb;
+	color: #2E2E2E;
+}
+.mainContent ul li {
+	font-size: 13pt;
+	margin-left: 30px;
+	list-style: none;
+	color: #5F5F5F;
+}
 .floatPic {
 	float:left;
 	margin:0 25px 10px 0;
