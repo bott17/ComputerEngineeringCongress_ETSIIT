@@ -113,6 +113,14 @@ padding:20px 0;
 	border:2px solid #FFFFFF;
 	box-shadow: 0px 3px 4px 0px #939393;
 }
+
+.mainContent img.shadow {
+	max-width: 100%; 
+	display: block;
+	border: 0px solid #FFFFFF;
+	box-shadow: 0px 3px 4px 0px #939393;
+}
+
 #tituloContent{
 	font-size: 30pt;
 }
