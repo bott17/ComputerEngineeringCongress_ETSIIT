@@ -128,8 +128,38 @@ padding:20px 0;
 	font-size: 13pt;
 	margin-left: 30px;
 	list-style: none;
-	color: #8F8F8F;
+	color: #5F5F5F;
 }
+.actividad {
+	background-color: green;
+	height: 160px;
+	margin-bottom: 5px;
+}
+.actividad h2 {
+	margin-left: 20px;}
+
+.actividad div {
+	float: left;	
+}
+
+.actividad #secIzq {
+	width: 25%;
+}
+
+.actividad #secDer {
+	width: 75%;
+}
+
+.actividad #secIzq img {
+	height: 80px;
+	width: 80px;
+	margin: auto;
+}
+
+.actividad #secIzq p {
+	margin: auto;
+}
+
 .floatPic {
 	float:left;
 	margin:0 25px 10px 0;
