@@ -26,9 +26,9 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
                 <li><a href="index.html">Presentaci&oacute;n</a></li>
                 <li id="active"><a href="horarios.html">Horarios</a></li>
                 <li><a href="actividades.html">Actividades y Talleres</a></li>
-                <li><a href="#">Inscr&iacute;bete</a></li>
-                <li><a href="#">Patroc&iacute;nanos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="incripcion.html">Inscr&iacute;bete</a></li>
+                <li><a href="patrocinanos.html">Patroc&iacute;nanos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
         <br class="clearfloat" />
@@ -74,7 +74,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
-					<li>Porsd confirmar</li>
+					<li>Por confirmar</li>
 				</ul>
 			</p>
         </div>
@@ -103,7 +103,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
                 <p>
                 	Cuanto antes mejor, se encontrar&aacute; con un descuento en la entrada.
                 </p>
-                <p><a href="">Leer m&aacute;s</a></p>
+                <p><a href="incripcion.html">Leer m&aacute;s</a></p>
             </div>
             <br class="clearfloat" />
             <br class="clearfloat" />
