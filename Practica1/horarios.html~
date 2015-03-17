@@ -25,7 +25,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
             <ul id="navlist">
                 <li><a href="index.html">Presentaci&oacute;n</a></li>
                 <li id="active"><a href="horarios.html">Horarios</a></li>
-                <li><a href="#">Actividades y Talleres</a></li>
+                <li><a href="actividades.html">Actividades y Talleres</a></li>
                 <li><a href="#">Inscr&iacute;bete</a></li>
                 <li><a href="#">Patroc&iacute;nanos</a></li>
                 <li><a href="#">Contacto</a></li>
@@ -51,22 +51,12 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         	<h2 id="tituloContent">Horarios del Congreso</h2>
             <p>
 				<ul>1 de Junio
-<<<<<<< HEAD
-					<li>9:30 a 11:30 -> NoseKien</li>
-					<li>11:30 a 13:00 -> NoseCuan</li>
-					<li>13:30 a 14:00 -> NoseWhat</li>
-					<li>14:30 -> Pausa para un bollito</li>
-					<li>16:30 a 17:30 -> NoseGuat</li>
-					<li>18:00 a 19:30 -> NosePrrr</li>
-					<li>19:30 -> Fin</li>
-=======
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
->>>>>>> a457c21f1b3b59eabe59ecfa18a45f76689898c6
 				</ul>
 				<br/>
 				<ul>2 de Junio
@@ -77,7 +67,6 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 				</ul>
-				</ul>
 				<br/>
 				<ul>3 de Junio
 					<li>Por confirmar</li>
@@ -85,9 +74,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
-					<li>Por confirmar</li>
-				</ul>
-					<li>19:30 -> Fin</li>
+					<li>Porsd confirmar</li>
 				</ul>
 			</p>
         </div>
