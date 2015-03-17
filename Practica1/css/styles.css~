@@ -63,16 +63,15 @@ padding:20px 0;
 	margin-bottom:20px;
 }
 .box p a {
-	background:#18bbff;
 	text-shadow:none;
 	color:#ffffff;
-	border-radius:5px;
-    box-shadow: 0 3px #0695d1;
 	padding:10px 20px;
 	text-transform:uppercase;
 	font-weight:bold;
 	text-decoration:none;
-	float:right;
+	background: #0489B1;
+	border-radius:0 0 5px 5px;
+	box-shadow: 0 3px #086A87;
 }
 .box p a:hover {
 	background:#0695d1;
@@ -83,8 +82,7 @@ padding:20px 0;
 	padding:10px 20px;
 	text-transform:uppercase;
 	font-weight:bold;
-	text-decoration:none;
-	float:right;
+	text-decoration:none;	
 }
 .sidebar1 {
 	float: right; 
@@ -125,6 +123,10 @@ footer {
 footer p {
 	text-align:center;
 	padding:20px;
+}
+footer p a img{
+	width: 50px;
+	height: 50px;
 }
 .clearfloat { 
 	clear:both;
