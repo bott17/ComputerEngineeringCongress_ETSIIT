@@ -24,11 +24,11 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         <div id="navcontainer">
             <ul id="navlist">
                 <li id="active"><a href="index.html">Presentaci&oacute;n</a></li>
-                <li><a href="horarios.html">Horarios y Ponencias</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="#">Actividades y Talleres</a></li>
-                <li><a href="#">Inscr&iacute;bete</a></li>
-                <li><a href="#">Patroc&iacute;nanos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="incripcion.html">Inscr&iacute;bete</a></li>
+                <li><a href="patrocinanos.html">Patroc&iacute;nanos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
         <br class="clearfloat" />
@@ -59,7 +59,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         	<h2>Bienvenidos al CEIIE</h2>
 Est&aacute;s en la p&aacute;gina principal del congreso de estudiantes de ingenier&iacute;a inform&aacute;tica en España. El congreso se celebrar&aacute; en la ciudad de <strong>Granada</strong> en la facultad de inform&aacute;tica o <strong>ETSIIT</strong> durante los d&iacute;as <strong>1, 2 y 3 de junio</strong>.<br><br>
 Durante el congreso podr&aacute;s disfrutar de las interesantes <strong>ponencias</strong> de nuestros invitados, de <strong>talleres</strong> y <strong>actividades</strong> (algunas se realizar&aacute;n fuera del recinto del congreso).<br><br>
-Tambi&eacute;n podr&aacute;s disfrutar de la ciudad de Granada durante tu estancia en el Congreso, cuya fecha coincide con la festividad del Corpus!!!<br><br>
+Tambi&eacute;n podr&aacute;s disfrutar de la ciudad de Granada durante tu estancia en el Congreso, cuya fecha coincide con la festividad del <strong>Corpus</strong>!!!<br><br>
 Al congreso te puedes inscribir gratuitamente, pero si quieres asistir tendr&aacute;s que abonar el precio de la entrada correspondiente . Hay descuento para la compra anticipada (mas informaci&oacute;n en la secci&oacute;n <strong>Inscr&iacute;bete</strong>).
 </p>
         </div>

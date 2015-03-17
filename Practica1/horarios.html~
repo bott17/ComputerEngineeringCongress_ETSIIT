@@ -25,7 +25,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
             <ul id="navlist">
                 <li><a href="index.html">Presentaci&oacute;n</a></li>
                 <li id="active"><a href="horarios.html">Horarios</a></li>
-                <li><a href="#">Actividades y Talleres</a></li>
+                <li><a href="actividades.html">Actividades y Talleres</a></li>
                 <li><a href="#">Inscr&iacute;bete</a></li>
                 <li><a href="#">Patroc&iacute;nanos</a></li>
                 <li><a href="#">Contacto</a></li>
@@ -67,7 +67,6 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 				</ul>
-				</ul>
 				<br/>
 				<ul>3 de Junio
 					<li>Por confirmar</li>
@@ -75,9 +74,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
 					<li>Por confirmar</li>
-					<li>Por confirmar</li>
-				</ul>
-					<li>19:30 -> Fin</li>
+					<li>Porsd confirmar</li>
 				</ul>
 			</p>
         </div>
