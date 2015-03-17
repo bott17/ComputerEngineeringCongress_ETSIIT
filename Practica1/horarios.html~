@@ -51,6 +51,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         	<h2 id="tituloContent">Horarios del Congreso</h2>
             <p>
 				<ul>1 de Junio
+<<<<<<< HEAD
 					<li>9:30 a 11:30 -> NoseKien</li>
 					<li>11:30 a 13:00 -> NoseCuan</li>
 					<li>13:30 a 14:00 -> NoseWhat</li>
@@ -58,25 +59,34 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					<li>16:30 a 17:30 -> NoseGuat</li>
 					<li>18:00 a 19:30 -> NosePrrr</li>
 					<li>19:30 -> Fin</li>
+=======
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+>>>>>>> a457c21f1b3b59eabe59ecfa18a45f76689898c6
 				</ul>
 				<br/>
 				<ul>2 de Junio
-					<li>9:30 a 11:30 -> NoseKien</li>
-					<li>11:30 a 13:00 -> NoseCuan</li>
-					<li>13:30 a 14:00 -> NoseWhat</li>
-					<li>14:30 -> Pausa para un bollito</li>
-					<li>16:30 a 17:30 -> NoseGuat</li>
-					<li>18:00 a 19:30 -> NosePrrr</li>
-					<li>19:30 -> Fin</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+				</ul>
 				</ul>
 				<br/>
 				<ul>3 de Junio
-					<li>9:30 a 11:30 -> NoseKien</li>
-					<li>11:30 a 13:00 -> NoseCuan</li>
-					<li>13:30 a 14:00 -> NoseWhat</li>
-					<li>14:30 -> Pausa para un bollito</li>
-					<li>16:30 a 17:30 -> NoseGuat</li>
-					<li>18:00 a 19:30 -> NosePrrr</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+					<li>Por confirmar</li>
+				</ul>
 					<li>19:30 -> Fin</li>
 				</ul>
 			</p>
@@ -85,29 +95,30 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         <br class="clearfloat" />
         <div class="boxes">
         	<div class="box">
-            	<div><img src="images/boxPic1.jpg" alt=""></div>
+            	<div><img src="images/granada.jpg" alt=""></div>
                 <h2>Granada</h2>
                 <p>
                 	Informaci&oacuten sobre la ciudad de granada y como llegar a esta.
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
             <div class="box">
-            	<div><img src="images/etsiit_logo_2.jpg" alt=""></div>
+            	<div><img src="images/etsiit.jpg" alt=""></div>
                 <h2>ETSIIT</h2>
                 <p>
                 	Informaci&oacuten sobre la ETSIIT y como llegar a esta
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
             <div class="box">
-            	<div><img src="images/boxPic3.jpg" alt=""></div>
-                <h2>Miau</h2>
+            	<div><img src="images/inscribete.jpg" alt=""></div>
+                <h2>Inscr&iacute;base en el congreso</h2>
                 <p>
-                	Miau miau miau miau miau miau miau miau
+                	Cuanto antes mejor, se encontrar&aacute; con un descuento en la entrada.
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
+            <br class="clearfloat" />
             <br class="clearfloat" />
         </div>
         <!-- end .boxes -->

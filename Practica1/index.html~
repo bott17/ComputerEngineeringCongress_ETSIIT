@@ -38,7 +38,7 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 		<div class="slider"> <!-- Aqui va menu desplazable (poner lider dentro de class -->
             <div class="flexslider"> <!-- aqui flexslider -->
                 <ul class=""> <!-- aqui slides -->
-                    <li><img src="images/sliderPic4.jpg" alt="" height="20px"><div class="sliderImageCaption"><h2>Snail 1 Title goes here, Lorem Ipsum is simply dummy</h2></div></li>
+                    <li><img src="images/logo_ugr.gif" alt="""></li>
                 </ul>
             </div>
         </div>
@@ -56,38 +56,39 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
         <!-- end .sidebar1 -->
         <!-- begin .mainContent -->
         <div class="mainContent">
-        	<h2>Ipsum is simply dummy text</h2>
-            <p><img src="images/contentPic.jpg" alt="" class="floatPic">
-Bienvenidos a la p&aacute;gina principal del congreso de estudiantes de ingenier&iacute;a inform&aacute;tica en España. El congreso se celebrar&aacute; en la ciudad de Granada en la facultad de inform&aacute;tica o ETSIIT durante los d&iacute;as 1, 2 y 3 de junio.<br><br>
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever 
+        	<h2>Bienvenidos al CEIIE</h2>
+Est&aacute;s en la p&aacute;gina principal del congreso de estudiantes de ingenier&iacute;a inform&aacute;tica en España. El congreso se celebrar&aacute; en la ciudad de <strong>Granada</strong> en la facultad de inform&aacute;tica o <strong>ETSIIT</strong> durante los d&iacute;as <strong>1, 2 y 3 de junio</strong>.<br><br>
+Durante el congreso podr&aacute;s disfrutar de las interesantes <strong>ponencias</strong> de nuestros invitados, de <strong>talleres</strong> y <strong>actividades</strong> (algunas se realizar&aacute;n fuera del recinto del congreso).<br><br>
+Tambi&eacute;n podr&aacute;s disfrutar de la ciudad de Granada durante tu estancia en el Congreso, cuya fecha coincide con la festividad del Corpus!!!<br><br>
+Al congreso te puedes inscribir gratuitamente, pero si quieres asistir tendr&aacute;s que abonar el precio de la entrada correspondiente . Hay descuento para la compra anticipada (mas informaci&oacute;n en la secci&oacute;n <strong>Inscr&iacute;bete</strong>).
 </p>
         </div>
         <!-- begin .boxes -->
         <br class="clearfloat" />
         <div class="boxes">
         	<div class="box">
-            	<div><img src="images/boxPic1.jpg" alt=""></div>
+            	<div><img src="images/granada.jpg" alt=""></div>
                 <h2>Granada</h2>
                 <p>
                 	Informaci&oacuten sobre la ciudad de granada y como llegar a esta.
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
             <div class="box">
-            	<div><img src="images/etsiit_logo_2.jpg" alt=""></div>
+            	<div><img src="images/etsiit.jpg" alt=""></div>
                 <h2>ETSIIT</h2>
                 <p>
                 	Informaci&oacuten sobre la ETSIIT y como llegar a esta
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
             <div class="box">
-            	<div><img src="images/boxPic3.jpg" alt=""></div>
-                <h2>Miau</h2>
+            	<div><img src="images/inscribete.jpg" alt=""></div>
+                <h2>Inscr&iacute;base en el congreso</h2>
                 <p>
-                	Miau miau miau miau miau miau miau miau
+                	Cuanto antes mejor, se encontrar&aacute; con un descuento en la entrada.
                 </p>
-                <p><a href="">More</a></p>
+                <p><a href="">Leer m&aacute;s</a></p>
             </div>
             <br class="clearfloat" />
         </div>
