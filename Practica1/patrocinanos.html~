@@ -1,15 +1,20 @@
 <!DOCTYPE HTML>
+<!--
+Design by Free Responsive Templates
+http://www.free-responsive-templates.com
+Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0) 
+-->
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEIIE - P&aacute;gina principal</title>
+<title>CEIIE - Patroc&iacute;nanos</title>
 <link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-	<div class="container">
-		<header>
+<div class="container">
+    <header>
     	<div id="navheader">
     		<div id="izq"><h2><a href="./index.html">Congreso de Estudiantes de Ingenier&iacute;a Inform&aacute;tica</a></h2></div>
     		<div id="der"><p>Zona de Usuario</br><a href="#">(Login)</a></p></div>    	
@@ -26,10 +31,8 @@
         </div>
         <br class="clearfloat" />
     </header>
-        <br class="clearfloat" />
-    </header>
-    
-    <!-- begin .slider -->
+    <section>
+    	<!-- begin .slider -->
 		<div class="slider"> <!-- Aqui va menu desplazable (poner lider dentro de class -->
             <div class="flexslider"> <!-- aqui flexslider -->
                 <ul class=""> <!-- aqui slides -->
@@ -37,11 +40,10 @@
                 </ul>
             </div>
         </div>
-		<!-- end .slider -->  
-		
+		<!-- end .slider --> 
 		<!-- begin .sidebar1 -->
         <div class="sidebar1">
-       		<li><img src="images/touch.jpg" alt=""></li>
+       		<img src="images/touch.jpg" alt="">
         </div>
         <!-- end .sidebar1 -->
         <!-- begin .mainContent -->
@@ -92,7 +94,7 @@
 			<a href="http://ugr.es/"><img src="images/patro_1.jpg"/></a>
 			<a href="http://etsiit.ugr.es/"><img src="images/patro_2.png"/></a>
 			<a href="http://www.mediamarkt.es/"><img src="images/patro_3.png"/></a>
-			<a href="http://www8.hp.com/es/es/home.html"><img src="images/patro_4.png"/></a>
+			<a href="http://hp.com/es/es/home.html"><img src="images/patro_4.png"/></a>
 			<a href="http://twitter.com/"><img src="images/patro_5.png"/></a>
 		</p>
     	<p>

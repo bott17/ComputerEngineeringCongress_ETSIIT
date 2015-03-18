@@ -137,6 +137,48 @@ padding:20px 0;
 	list-style: none;
 	color: #5F5F5F;
 }
+
+.mainContent table {
+	font-size: 20pt;	
+	padding: 20px;
+	background:url(../images/contentBackground.jpg) repeat;	
+	border:1px solid #bbbbbb;
+	color: #2E2E2E;
+}
+
+.mainContent table tr td img {
+	margin: auto;
+}
+
+.mainContent table tr th {
+	font-size: 12pt;
+	text-align: left;
+	width: 40%;	
+}
+
+.mainContent table tr td {
+	font-size: 12pt;
+	text-align: center;
+	width: 60%;	
+}
+
+.mainContent table tr td input {
+	width: 200px;
+}
+
+.mainContent table tr td select {
+	width: 200px;
+}
+
+#botonForm {
+	padding:10px;
+	color: white;
+	background:#2E2E2E;
+	
+	border-radius:0 0 5px 5px;
+    box-shadow: 0 3px #1E1E1E;
+}
+
 .actividad {
 	background:url(../images/contentBackground.jpg) repeat;	
 	height: 185px;
