@@ -78,9 +78,8 @@ Released for free under a Creative Commons Attribution 3.0 Unported License (CC 
 					</tr>	
 					<tr>
 						<th>Recibir noticas del evento en tu email de contacto</th>
-						<td><input type="checkbox" checked /></td>	
+						<td><input type="checkbox" checked /><input id="botonForm" type="submit" value="Inscribir" /></td>	
 					</tr>	
-					<tr><td colspan="2"><input id="botonForm" type="submit" value="Inscribir" /></td></tr>
 				</table>
 			</form>
         </div>
