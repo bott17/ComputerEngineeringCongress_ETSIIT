@@ -343,6 +343,29 @@ ul#navlist {
 /*--------------------------------------------------------------------------------------------*/
 /********* begin SLIDER ********/
 /*--------------------------------------------------------------------------------------------*/
+/*los mios*/
+.image-slider-wrapper{
+	overflow: hidden;
+}
+#image_slider{
+	position: relative;
+	overflow: hidden;
+	height: 280px;
+	padding:0;
+	left:0;
+}
+#image_slider li{
+	position:relative;
+	max-width: 100%;
+	float:left;
+	list-style: none;
+	left: 0;
+}
+#image_slider li img {
+	width: 100px;
+	height: 100px;
+}
+/*los otros que voy a borrar*/
 .slider { 
 	width:956px;
 	position:relative; 
