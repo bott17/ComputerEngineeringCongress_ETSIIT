@@ -185,11 +185,13 @@ padding:20px 0;
 
 #tablaContact tr th {
 	width: 35%;	
-	background-color: lime;
 }
 #tablaContact tr td {
 	width: 65%;
-	background-color: red;
+}
+#tablaContact tr td textarea {
+	width: 95%;	
+	resize: none;
 }
 
 .actividad {
