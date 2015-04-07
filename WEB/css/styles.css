@@ -14,6 +14,9 @@ body  {
 	color: #777777;
 	text-shadow: 0px 0px, 1px 1px #ffffff;
 }
+ul {
+	list-style-type: none;
+}
 a {
 	color:#0088d0;
 	text-decoration:underline;
@@ -29,15 +32,8 @@ h2 {
 	width: 960px;
 	margin: 0 auto;
 } 
-header h1 {
-	float:left;
-	padding:75px 0 0 0;
-}
-header h1 a {
-	font-size: 36px;
-	color:#160000;
-	text-decoration:none;
-}
+
+
 .boxes {
 	background:url(../images/contentBackground.jpg) repeat;
 	border:1px solid #bbbbbb;
@@ -305,7 +301,7 @@ footer p a img{
 	height: 100%;
 }
 #navcontainer {
-	float:left;
+	z-index: 2;
 }
 ul#navlist {
 	margin-left: 0;
@@ -315,9 +311,12 @@ ul#navlist {
 #navlist li {
 	display: inline;
 	list-style-type: none;
-	padding:20px 0 0 1px;
-	float:left;
+	float:left
 }
+#navlist > li {
+	padding:20px 0 0 1px;
+}
+
 #navlist a {
 	background:#2E2E2E;
 	padding:20px 22px 10px 22px;
@@ -333,11 +332,30 @@ ul#navlist {
 	border-radius:0 0 5px 5px;
     box-shadow: 0 3px #086A87;
 }
-#navlist #active a {
+#navlist #active > a {
 	background: #0489B1;
 	border-radius:0 0 5px 5px;
 	box-shadow: 0 3px #086A87;
 }
+
+/***************************/
+
+#navlist li ul {
+	display:none;
+	position:absolute;
+	min-width:140px;
+}
+
+#navlist:hover  ul {
+	display:block;
+}
+
+
+#subnavlist li{
+	padding: 0 0 0 0;
+}
+
+/*********************************/
 /*--------------------------------------------------------------------------------------------*/
 /********* end MAIN NAV ********/
 /*--------------------------------------------------------------------------------------------*/
@@ -346,7 +364,7 @@ ul#navlist {
 .slider { 
 	width:956px;
 	position:relative; 
-	z-index:1; 
+	z-index:-1; 
 	background:#fff; 
 	margin:20px 0 80px 0;
 }
