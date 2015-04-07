@@ -13,7 +13,6 @@ function contacto(){
 	if(mens!=''){
 		alert(mens);
 		return false;
-	}
 	alert('Gracias por ponerse en contacto.');
 	return true;
 }
