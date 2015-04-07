@@ -13,7 +13,6 @@ function contacto(){
 	if(mens!=''){
 		alert(mens);
 		return false;
-	}
 	alert('Gracias por ponerse en contacto.');
 	return true;
 }
@@ -21,8 +20,12 @@ function contacto(){
 
 
 /**
- * Array con las imagenes que se iran mostrando en la web
+ * Array con las imagenes y urls que se iran mostrando en la web
 */
+
+//indice de los arrays
+var index=0;
+
 var imagenes=new Array(
 	'images/patro_1.jpg', 
   	'images/patro_2.png',
@@ -44,6 +47,12 @@ setInterval(sliderPatrocinadores,5000);
 
 
 function sliderPatrocinadores(){
+<<<<<<< HEAD
+        
+	// cambiamos la imagen
+	document.getElementById("patro1").src=imagenes[index%5];
+	document.getElementById("aPatro1").href=sources[index%5];
+=======
 	
 
     // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
@@ -52,6 +61,7 @@ function sliderPatrocinadores(){
 	// cambiamos la imagen
 	document.getElementById("patro1").src=imagenes[index];
 	document.getElementById("aPatro1").href=sources[index];
+>>>>>>> 5b8260923a90d28e6e092fc2a270d7c2a081a67e
 
 	document.getElementById("patro2").src=imagenes[(index+1)%5];
 	document.getElementById("aPatro2").href=sources[(index+1)%5];
@@ -64,4 +74,11 @@ function sliderPatrocinadores(){
 	
 	document.getElementById("patro5").src=imagenes[(index+4)%5];
 	document.getElementById("aPatro5").href=sources[(index+4)%5];
+<<<<<<< HEAD
+	
+	//aumentamos el indice
+	index++;
+	
+=======
+>>>>>>> 5b8260923a90d28e6e092fc2a270d7c2a081a67e
 }
