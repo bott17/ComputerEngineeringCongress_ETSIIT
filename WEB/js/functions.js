@@ -47,10 +47,21 @@ setInterval(sliderPatrocinadores,5000);
 
 
 function sliderPatrocinadores(){
+<<<<<<< HEAD
         
 	// cambiamos la imagen
 	document.getElementById("patro1").src=imagenes[index%5];
 	document.getElementById("aPatro1").href=sources[index%5];
+=======
+	
+
+    // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+	var index=Math.floor((Math.random()*imagenes.length));
+        
+	// cambiamos la imagen
+	document.getElementById("patro1").src=imagenes[index];
+	document.getElementById("aPatro1").href=sources[index];
+>>>>>>> 5b8260923a90d28e6e092fc2a270d7c2a081a67e
 
 	document.getElementById("patro2").src=imagenes[(index+1)%5];
 	document.getElementById("aPatro2").href=sources[(index+1)%5];
@@ -63,8 +74,11 @@ function sliderPatrocinadores(){
 	
 	document.getElementById("patro5").src=imagenes[(index+4)%5];
 	document.getElementById("aPatro5").href=sources[(index+4)%5];
+<<<<<<< HEAD
 	
 	//aumentamos el indice
 	index++;
 	
+=======
+>>>>>>> 5b8260923a90d28e6e092fc2a270d7c2a081a67e
 }
