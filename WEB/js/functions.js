@@ -1,11 +1,3 @@
-var ul;
-var li_items; 
-var li_number;
-var image_number = 0;
-var slider_width = 0;
-var image_width;
-var current = 0;
-
 function contacto(){
 	var email = document.getElementById('email').value;
 	var mens = '';
@@ -26,64 +18,54 @@ function contacto(){
 	return true;
 }
 
-function init(){	
-	ul = document.getElementById('image_slider');
-	li_items = ul.children;
-	li_number = li_items.length;
-	for (i = 0; i < li_number; i++){
-			image_width = li_items[i].childNodes[0].clientWidth;
-			slider_width += image_width;
-			image_number++;
-	}
-	
-	ul.style.width = parseInt(slider_width) + 'px';
-	slider(ul);
-}
 
-function slider(){		
-		animate({
-			delay:17,
-			duration: 3000,
-			delta:function(p){return Math.max(0, -1 + 2 * p)},
-			step:function(delta){
-					ul.style.left = '-' + parseInt(current * image_width + delta * image_width) + 'px';
-				},
-			callback:function(){
-				current++;
-				if(current < li_number-1){
-					slider();
-				}
-				else{
-					var left = (li_number - 1) * image_width;					
-					setTimeout(function(){goBack(left)},2000); 				
-					setTimeout(slider, 4000);
-				}
-			}
-		});
+
+/**
+ * Array con las imagenes y urls que se iran mostrando en la web
+*/
+
+//indice de los arrays
+var index=0;
+
+var imagenes=new Array(
+	'images/patro_1.jpg', 
+  	'images/patro_2.png',
+    'images/patro_3.png',
+    'images/patro_4.png',
+   	'images/patro_5.png'
+   	);
+   	
+var sources = new Array(
+	'http://www.ugr.es/',
+	'http://etsiit.ugr.es/',
+	'http://www.mediamarkt.es/',
+	'http://hp.com/es/es/home.html',
+	'http://twitter.com/'
+	);
+   	
+// Indicamos que cada 5 segundos cambie la imagen
+setInterval(sliderPatrocinadores,5000);
+
+
+function sliderPatrocinadores(){
+        
+	// cambiamos la imagen
+	document.getElementById("patro1").src=imagenes[index%5];
+	document.getElementById("aPatro1").href=sources[index%5];
+
+	document.getElementById("patro2").src=imagenes[(index+1)%5];
+	document.getElementById("aPatro2").href=sources[(index+1)%5];
+	
+	document.getElementById("patro3").src=imagenes[(index+2)%5];
+	document.getElementById("aPatro3").href=sources[(index+2)%5];
+	
+	document.getElementById("patro4").src=imagenes[(index+3)%5];
+	document.getElementById("aPatro4").href=sources[(index+3)%5];
+	
+	document.getElementById("patro5").src=imagenes[(index+4)%5];
+	document.getElementById("aPatro5").href=sources[(index+4)%5];
+	
+	//aumentamos el indice
+	index++;
+	
 }
-function goBack(left_limits){
-	current = 0;	
-	setInterval(function(){
-		if(left_limits >= 0){
-			ul.style.left = '-' + parseInt(left_limits) + 'px';
-			left_limits -= image_width / 10;
-		}	
-	}, 17);
-}
-function animate(opts){
-	var start = new Date;
-	var id = setInterval(function(){
-		var timePassed = new Date - start;
-		var progress = timePassed / opts.duration
-		if(progress > 1){
-			progress = 1;
-		}
-		var delta = opts.delta(progress);
-		opts.step(delta);
-		if (progress == 1){
-			clearInterval(id);
-			opts.callback();
-		}
-	}, opts.dalay || 17);
-}
-window.onload = init;
