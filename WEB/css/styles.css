@@ -175,6 +175,21 @@ padding:20px 0;
     box-shadow: 0 3px #1E1E1E;
 }
 
+#tablaContact {
+	width: 95%;
+}
+
+#tablaContact tr th {
+	width: 35%;	
+}
+#tablaContact tr td {
+	width: 65%;
+}
+#tablaContact tr td textarea {
+	width: 95%;	
+	resize: none;
+}
+
 .actividad {
 	background:url(../images/contentBackground.jpg) repeat;	
 	height: 185px;
