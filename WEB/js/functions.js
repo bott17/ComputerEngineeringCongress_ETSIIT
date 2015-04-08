@@ -67,6 +67,6 @@ function sliderPatrocinadores(){
 	
 	//aumentamos el indice
 	index++;
-	if(index<=10) index=0;
+	if(index>=10) index=0;
 	
 }
