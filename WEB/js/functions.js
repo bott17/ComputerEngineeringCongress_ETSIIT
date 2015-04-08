@@ -48,15 +48,10 @@ setInterval(sliderPatrocinadores,5000);
 
 
 function sliderPatrocinadores(){
-
-	
-
-    // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
-	var index=Math.floor((Math.random()*imagenes.length));
         
 	// cambiamos la imagen
-	document.getElementById("patro1").src=imagenes[index];
-	document.getElementById("aPatro1").href=sources[index];
+	document.getElementById("patro1").src=imagenes[index%5];
+	document.getElementById("aPatro1").href=sources[index%5];
 	
 	document.getElementById("patro2").src=imagenes[(index+1)%5];
 	document.getElementById("aPatro2").href=sources[(index+1)%5];
@@ -72,5 +67,6 @@ function sliderPatrocinadores(){
 	
 	//aumentamos el indice
 	index++;
+	if(index<=10) index=0;
 	
 }
