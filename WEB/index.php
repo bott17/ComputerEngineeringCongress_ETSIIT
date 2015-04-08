@@ -6,14 +6,7 @@ http://www.free-responsive-templates.com
 Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0) 
 -->
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="js/functions.js"></script>
-<title>CEIIE - Presentaci&oacute;n</title>
-<link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
-<link href="css/styles.css" rel="stylesheet" type="text/css" />
-</head>
+<?php include 'estructura/head.php';?>
 <body>
 <div class="container">
     <header>
