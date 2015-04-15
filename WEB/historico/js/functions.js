@@ -1,5 +1,7 @@
 function contacto(){
 	var email = document.getElementById('email').value;
+	var nombre = document.getElementById('nombre').value;
+	var texto = document.getElementById('texto').value;
 	var mens = '';
 	
 	//expresion regular
@@ -7,13 +9,22 @@ function contacto(){
 	
 		
 	if (!(email.match(Vema)))
-		mens += 'Email no valido \n';	
-	
+		mens += 'Email no valido \n';		
 	
 	if(mens!=''){
 		alert(mens);
 		return false;
 	}
+	if(nombre==''){
+		alert('Falta su nombre.');
+		return false;
+	}
+
+	if(texto==''){
+		alert('No hay nada escrito.');
+		return false;
+	}
+
 	alert('Gracias por ponerse en contacto.');
 	return true;
 }
