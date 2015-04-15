@@ -308,13 +308,10 @@ ul#navlist {
 	padding-left: 0;
 	white-space: nowrap;
 }
-#navlist li {
-	display: inline;
-	list-style-type: none;
-	float:left
-}
+
 #navlist > li {
 	padding:20px 0 0 1px;
+	float:left
 }
 
 #navlist a {
@@ -346,15 +343,16 @@ ul#navlist {
 	min-width:140px;
 }
 
-#navlist:hover  ul {
+#navlist li:hover > .subnavlist {
 	display:block;
 }
 
 
-#subnavlist li{
-	padding: 0 0 0 0;
+.subnavlist > li{
+	padding: 35px 0 0 0;
+	display: block;
+	float: none;
 }
-
 /*********************************/
 /*--------------------------------------------------------------------------------------------*/
 /********* end MAIN NAV ********/
