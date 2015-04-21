@@ -6,37 +6,7 @@ http://www.free-responsive-templates.com
 Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0) 
 -->
 <html>
-<?php include 'estructura/head.php';?>
-<body>
-<div class="container">
-    <header>
-    	<div id="navheader">
-    		<div id="izq"><h2><a href="./index.html">Congreso de Estudiantes de Ingenier&iacute;a Inform&aacute;tica</a></h2></div>
-    		<div id="der"><p>Zona de Usuario</br><a href="#">(Login)</a></p></div>    	
-    	</div>
-        <div id="navcontainer">
-            <ul id="navlist" class="nav">
-            	<li id="active"><a href="index.html">Presentaci&oacute;n</a></li>
-            	<li> <ul id="subnavlist">
-		                <li><a href="horarios.html">Horarios</a></li>
-		                <li><a href="actividades.html">Actividades y Talleres</a></li>
-		                <li><a href="incripcion.html">Inscr&iacute;bete</a></li>
-		                <li><a href="patrocinanos.html">Patroc&iacute;nanos</a></li>
-		                <li><a href="contacto.html">Contacto</a></li>
-		        </ul></li>
-            </ul>
-        </div>
-        <br class="clearfloat" />
-    </header>
-    <section>
-    	<!-- begin .slider -->
-		<div class="slider"> <!-- Aqui va menu desplazable (poner lider dentro de class -->
-            <div class="flexslider"> <!-- aqui flexslider -->
-                <ul class=""> <!-- aqui slides -->
-                    <li><img src="images/logo_ugr.gif" alt=""></li>
-                </ul>
-            </div>
-        </div>
+<?php include 'estructura/header.php';?>
 		<!-- end .slider -->        
         <!-- begin .sidebar1 -->
         <div class="sidebar1">
