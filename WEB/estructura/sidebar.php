@@ -19,6 +19,7 @@
 			case 'inscripcion':
 				break;		
 			case 'patrocinanos':
+				echo "<img src='images/touch.jpg' alt=''>";
 				break;
 			default:
 				echo "
