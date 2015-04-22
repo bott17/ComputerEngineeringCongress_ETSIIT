@@ -8,6 +8,10 @@
 			case 'contacto':
 				break;	
 			case 'horarios':
+				echo "
+	                <li><a href='index.php?sec=horarios#dia1'>Sesi&oacute;n d&iacute;a 1</a></li>
+					<li><a href='index.php?sec=horarios#dia2'>Sesi&oacute;n d&iacute;a 2</li>
+	                <li><a href='index.php?sec=horarios#dia3'>Sesi&oacute;n d&iacute;a 3</a></li>";	
 				break;	
 			case 'inscripcion':
 				break;		

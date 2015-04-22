@@ -5,6 +5,38 @@ switch ($seccion) {
 		case 'contacto':
 			break;	
 		case 'horarios':
+			echo "
+				<div class='mainContent'>
+		        	<h2 id='tituloContent'>Horarios del Congreso</h2>
+		            <p>
+						<ul id='dia1'>1 de Junio
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+						</ul>
+						<br/>
+						<ul id='dia2'>2 de Junio
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+						</ul>
+						<br/>
+						<ul id='dia3'>3 de Junio
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+							<li>Por confirmar</li>
+						</ul>
+					</p>
+		        </div>";
 			break;	
 		case 'inscripcion':
 			break;		
