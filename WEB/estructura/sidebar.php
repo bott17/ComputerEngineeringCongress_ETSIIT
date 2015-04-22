@@ -17,6 +17,11 @@
 	                <li><a href='index.php?sec=horarios#dia3'>Sesi&oacute;n d&iacute;a 3</a></li>";	
 				break;	
 			case 'inscripcion':
+				echo "
+	                <li><a href='#'>.......</a></li>
+	                <li><a href='#'>.......</a></li>
+	                <li><a href='#'>.......</a></li>
+	                <li><a href='#'>.......</a></li>";
 				break;		
 			case 'patrocinanos':
 				echo "<img src='images/touch.jpg' alt=''>";
