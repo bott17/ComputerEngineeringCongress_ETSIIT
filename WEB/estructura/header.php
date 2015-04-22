@@ -1,5 +1,3 @@
-<?php $seccion=$_REQUEST["seccion"]; ?>
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,12 +47,12 @@ switch ($seccion) {
 					<div class='container'>
 					    <header>
 					    	<div id='navheader'>
-					    		<div id='izq'><h2><a href='./index.html'>Congreso de Estudiantes de Ingenier&iacute;a Inform&aacute;tica</a></h2></div>
+					    		<div id='izq'><h2><a href='./index.php'>Congreso de Estudiantes de Ingenier&iacute;a Inform&aacute;tica</a></h2></div>
 					    		<div id='der'><p>Zona de Usuario</br><a href='#'>(Login)</a></p></div>    	
 					    	</div>
 					        <div id='navcontainer'>
 					            <ul id='navlist' class='nav'>
-					            	<li id='active'><a href='index.html'>Presentaci&oacute;n</a></li>
+					            	<li id='active'><a href='index.php'>Presentaci&oacute;n</a></li>
 					            	<li> <ul id='subnavlist'>
 							                <li><a href='index.php?seccion=horarios'>Horarios</a></li>
 							                <li><a href='index.php?seccion=actividades'>Actividades y Talleres</a></li>

@@ -99,12 +99,17 @@ padding:20px 0;
 .sidebar1 li a:hover {
 	text-decoration:underline;
 }
+.sidebar1 iframe  {
+	width: 100%;
+	height: 400px;
+}
+
 .mainContent { 
 	margin: 0 360px 0 0;
 	padding:0 0 20px 0;
 }
 .mainContent img {
-	max-width: 100%; 
+	width: 50%; 
 	display: block; 
 	border:2px solid #FFFFFF;
 	box-shadow: 0px 3px 4px 0px #939393;
@@ -308,13 +313,10 @@ ul#navlist {
 	padding-left: 0;
 	white-space: nowrap;
 }
-#navlist li {
-	display: inline;
-	list-style-type: none;
-	float:left
-}
+
 #navlist > li {
 	padding:20px 0 0 1px;
+	float:left
 }
 
 #navlist a {
@@ -346,15 +348,16 @@ ul#navlist {
 	min-width:140px;
 }
 
-#navlist:hover  ul {
+#navlist li:hover > .subnavlist {
 	display:block;
 }
 
 
-#subnavlist li{
-	padding: 0 0 0 0;
+.subnavlist > li{
+	padding: 35px 0 0 0;
+	display: block;
+	float: none;
 }
-
 /*********************************/
 /*--------------------------------------------------------------------------------------------*/
 /********* end MAIN NAV ********/
