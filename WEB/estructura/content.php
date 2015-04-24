@@ -6,13 +6,13 @@ switch ($seccion) {
 		        	<h2 id='tituloContent'>Actividades y Talleres</h2>            
 		            <div id='alhambra' class='actividad'>
 						<h2>Visita a la Alhambra (2 de junio)</h2>
-						<div id='secIzq'><img src='images/alhambra.jpg' alt=''/></div>
+						<div id='secIzq'><img src='images/actividades/alhambra/alhambra.jpg' alt=''/></div>
 						<div id='secCen'><p>Es un rico complejo palaciego y fortaleza (alcázar o al-qasr القصر) que alojaba al monarca y a la corte del Reino nazarí de Granada. En 2011 se convirtió en el monumento más visitado de España, recibiendo la cifra histórica de 2310764 visitantes.</p></div>
 						<div id='secDer'><a>Leer M&aacute;s</a></div>
 					</div>
 					<div id='sierra_nevada' class='actividad'>
 						<h2>Subida a Sierra Nevada (3 de junio)</h2>
-						<div id='secIzq'><img src='images/sierra_nevada.jpg' alt=''/></div>
+						<div id='secIzq'><img src='images/actividades/sierra_nevada/sierra_nevada.jpg' alt=''/></div>
 						<div id='secCen'><p>Situada en Andalucía, extendiéndose por las provincias de Granada y Almería. Es el macizo montañoso de mayor altitud de toda Europa occidental, después de los Alpes. Su altitud máxima se alcanza en el pico Mulhacén, de 3.482 metros</p></div>
 						<div id='secDer'><a>Leer M&aacute;s</a></div>
 					</div>			
@@ -60,7 +60,7 @@ switch ($seccion) {
 		        	<ul>
 		        		<li>Telefono comercial: <b>555 998 637</b></li>
 		        		<li>Email comercial: <a href='mailto:comercial@correo.com?Subject=Become%a%Partnert'>comercial@correo.com</a></li>
-		        		<li>Encuentranos en Skype: <a href='skype:[comercialCuenta]?call>[comercialCuenta]'><img class='shadow' src='images/skype-icon.png' /></a></li>
+		        		<li>Encuentranos en Skype: <a href='skype:[comercialCuenta]?call>[comercialCuenta]'><img class='shadow' src='images/contacto/skype-icon.png' /></a></li>
 		        	</ul>		        	
 		        </div>";
 			break;	
@@ -112,7 +112,7 @@ switch ($seccion) {
 		        	</ul>
 					<form method='post' action='' enctype='x-www-form-urlencoded'>				
 						<table>
-							<tr><td colspan='2'><img class='shadow' src='images/JoinToday.png' /></td></tr>
+							<tr><td colspan='2'><img class='shadow' src='images/inscripcion/JoinToday.png' /></td></tr>
 							<tr>
 								<th>Tu nombre: </th>
 								<td><input autofocus type='text' value='' placeholder='Pedro Perez Perez' name='name'></td>
@@ -180,27 +180,27 @@ switch ($seccion) {
 		        	<h3> Algunos de nuestros patrocinadores mas importantes</h3>
 		        	<br>
 		        	<div class='box'>
-		            	<div><a href='http://www.granada.org/'><img src='images/granada.jpg' alt=''></a></div>
+		            	<div><a href='http://www.granada.org/'><img src='images/patrocinador/granada.jpg' alt=''></a></div>
 		                <a href='http://www.granada.org/'><h2>Granada</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://etsiit.ugr.es/'><img src='images/etsiit.jpg' alt=''></a></div>
+		            	<div><a href='http://etsiit.ugr.es/'><img src='images/patrocinador/etsiit.jpg' alt=''></a></div>
 		                <a href='http://etsiit.ugr.es/'><h2>ETSIIT</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.dell.es/'><img  src='images/Dell-Logo.jpg' alt=''></a></div>
+		            	<div><a href='http://www.dell.es/'><img  src='images/patrocinador/Dell-Logo.jpg' alt=''></a></div>
 		                <a href='http://www.dell.es/'><h2>Dell</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.whatsapp.com/'><img src='images/logo-wasap.png' alt=''></a></div>
+		            	<div><a href='http://www.whatsapp.com/'><img src='images/patrocinador/logo-wasap.png' alt=''></a></div>
 		                <a href='http://www.whatsapp.com/'><h2>Whatsapp</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.tid.es/'><img src='images/logo-tid.jpeg' alt=''></a></div>
+		            	<div><a href='http://www.tid.es/'><img src='images/patrocinador/logo-tid.jpeg' alt=''></a></div>
 		                <a href='http://www.tid.es/'><h2>Telefónica I+D</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='index.php?sec=contacto'><img src='images/logo-tu.jpg' alt=''></a></div>
+		            	<div><a href='index.php?sec=contacto'><img src='images/patrocinador/logo-tu.jpg' alt=''></a></div>
 		                <a href='index.php?sec=contacto'><h2>Tu espacio te espera</h2></a>
 		            </div>
 		            <br class='clearfloat' />
@@ -224,7 +224,7 @@ switch ($seccion) {
 				Inscr&iacute;bete</strong>).
 			</p>
 
-			<h2 id='ETSIIT'>ETSIIT <img src='images/etssit.jpeg' alt=''></h2>
+			<h2 id='ETSIIT'>ETSIIT <img src='images/principal/etssit.jpeg' alt=''></h2>
 			<p>
 				La Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación (ETSIIT) es un centro docente 
 				universitario perteneciente a la Universidad de Granada, dedicado a la enseñanza, la investigación y el 
@@ -241,7 +241,7 @@ switch ($seccion) {
     			<strong>Como llegar:</strong><br>			
 			</p>
 			
-			<h2 id='Granada'>Granada <img src='images/granada_index.jpg' alt=''></h2>
+			<h2 id='Granada'>Granada <img src='images/principal/granada_index.jpg' alt=''></h2>
 			<p>
 				Granada es una ciudad y municipio español, capital de la provincia homónima, en la comunidad autónoma de 
 				Andalucía. Está situada en el centro de la comarca Vega de Granada, a una altitud de 680 msnm, en una 
