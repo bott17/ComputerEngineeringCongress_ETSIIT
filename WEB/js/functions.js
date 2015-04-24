@@ -39,11 +39,11 @@ function contacto(){
 var index=0;
 
 var imagenes=new Array(
-	'images/patro_1.jpg', 
-  	'images/patro_2.png',
-    'images/patro_3.png',
-    'images/patro_4.png',
-   	'images/patro_5.png'
+	'images/patrocinador/patro_1.jpg', 
+  	'images/patrocinador/patro_2.png',
+    'images/patrocinador/patro_3.png',
+    'images/patrocinador/patro_4.png',
+   	'images/patrocinador/patro_5.png'
    	);
    	
 var sources = new Array(
