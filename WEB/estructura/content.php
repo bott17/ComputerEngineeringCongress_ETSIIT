@@ -69,31 +69,102 @@ switch ($seccion) {
 				<div class='mainContent'>
 		        	<h2 id='tituloContent'>Horarios del Congreso</h2>
 		            <p>
-						<ul id='dia1'>1 de Junio
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
+						<ul id='dia1'>D&iacute;a 1
+							<li>
+								<table class='tableSesion'>
+									<tr><th>9:00 - 11:00</th></tr>
+									<tr>
+										<th rowspan='3'>Ing. Software</th>
+										<td><a href='sesion.php?sec=$seccion&pon=magiles'>Metodologias agiles, M. Noguera</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=ifml'>IFML, M. Cabrera</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=prince2'>Prince2, M.J. Rodriguez</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>11:00 - 11:30</th><td>Pausa-cafe</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>11:30 - 13:30</th></tr>
+									<tr>
+										<th rowspan='3'>Inf. Gr&aacute;fica</th>
+										<td><a href='sesion.php?sec=$seccion&pon=visrea'>Visualizacion y Realismo, C. Ure&ntilde;a</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=digi3d'>Digitalizacion 3D, F.J. Merelo</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=reaume'>Realidad Aumentada, J. Revelles</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>13:30 - 15:00</th><td>Comida</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>11:30 - 13:30</th></tr>
+									<tr>
+										<th rowspan='3'>Bases de Datos</th>
+										<td><a href='sesion.php?sec=$seccion&pon=bdmdim'>B.D. Multidimensionales, E. Garvi</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=bdoo'>B.D. orientadas a objetos, J. Samos</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=bddis'>B.D. distribuidas, C. Delgado</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>17:00 - 17:30</th><td>Pausa-Cafe</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>17:30 - 19:30</th></tr>
+									<tr>
+										<th rowspan='3'>Compiladores</th>
+										<td><a href='sesion.php?sec=$seccion&pon=prolen'>Procesadores de lenguajes, J. Revelles</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=traduc'>Traductores, R. Lopez-Cozar</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=prohab'>Procesamiento del habla, Z. Callejas</a></td></tr>
+								</table>
+							</li>
 						</ul>
 						<br/>
-						<ul id='dia2'>2 de Junio
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-						</ul>
-						<br/>
-						<ul id='dia3'>3 de Junio
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
-							<li>Por confirmar</li>
+						<ul id='dia2'>D&iacute;a 2
+							<li>
+								<table class='tableSesion'>
+									<tr><th>9:00 - 11:00</th></tr>
+									<tr>
+										<th rowspan='3'>Sistemas Operativos</th>
+										<td><a href='sesion.php?sec=$seccion&pon=swind'>Sistemas Windows, A. Leon</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=slinx'>Sistemas Unix/Linux, P. Paderewski</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=siosmac'>Sistemas iOS/Mac, R. Montes</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>11:00 - 11:30</th><td>Pausa-cafe</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>11:30 - 13:30</th></tr>
+									<tr>
+										<th rowspan='3'>Sistemas Complejos</th>
+										<td><a href='sesion.php?sec=$seccion&pon=propar'>Programacion paralela, J.M. Mantas</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=sisdis'>Sistemas distribuidos, J.L. Garrido</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=sistr'>Sistemas en tiempo real, J.A. Holgado</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>13:30 - 15:00</th><td>Comida</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>11:30 - 13:30</th></tr>
+									<tr>
+										<th rowspan='3'>Interfaces de usuario</th>
+										<td><a href='sesion.php?sec=$seccion&pon=inthap'>Interaccion Haptica, F. Soler</a></td>
+									</tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=wereab'>Wereables, M. Cabrera</a></td></tr>
+									<tr><td><a href='sesion.php?sec=$seccion&pon=reavir'>Realidad virtual, J. Flores</a></td></tr>
+								</table>
+							</li>
+							<li><table class='tableSesion'><tr><th>17:00 - 17:30</th><td>Pausa-Cafe</td></tr></table></li>
+							<li>
+								<table class='tableSesion'>
+									<tr><th>17:30 - 19:30</th></tr>
+									<tr>
+										<th rowspan='3'>Trabajos fin de grado</th>
+										<td>Mesa redonda y sesion de posters</td>
+									</tr>
+								</table>
+							</li>
 						</ul>
 					</p>
 		        </div>

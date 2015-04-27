@@ -14,7 +14,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li id='active'><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
@@ -34,7 +33,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
@@ -54,7 +52,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
@@ -74,7 +71,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
@@ -94,7 +90,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
@@ -114,7 +109,6 @@
 				        		<ul  class='subnavlist'>
 					      			<li><a href='index.php?sec=horarios#dia1'>Primer día</a></li>
 					       			<li><a href='index.php?sec=horarios#dia2'>Segundo día</a></li>
-					       			<li><a href='index.php?sec=horarios#dia3'>Tercer día</a></li>
 					       		</ul>
 				        	</li>
 					        <li><a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>	        	
