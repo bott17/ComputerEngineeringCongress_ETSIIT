@@ -1,69 +1,13 @@
 <?php
 switch ($seccion) {
 		case 'actividades':
-			echo "
-				<div class='mainContent'>
-		        	<h2 id='tituloContent'>Actividades y Talleres</h2>            
-		            <div id='alhambra' class='actividad'>
-						<h2>Visita a la Alhambra (2 de junio)</h2>
-						<div id='secIzq'><img src='images/actividades/alhambra/alhambra.jpg' alt=''/></div>
-						<div id='secCen'><p>Es un rico complejo palaciego y fortaleza (alcázar o al-qasr القصر) que alojaba al monarca y a la corte del Reino nazarí de Granada. En 2011 se convirtió en el monumento más visitado de España, recibiendo la cifra histórica de 2310764 visitantes.</p></div>
-						<div id='secDer'><a>Leer M&aacute;s</a></div>
-					</div>
-					<div id='sierra_nevada' class='actividad'>
-						<h2>Subida a Sierra Nevada (3 de junio)</h2>
-						<div id='secIzq'><img src='images/actividades/sierra_nevada/sierra_nevada.jpg' alt=''/></div>
-						<div id='secCen'><p>Situada en Andalucía, extendiéndose por las provincias de Granada y Almería. Es el macizo montañoso de mayor altitud de toda Europa occidental, después de los Alpes. Su altitud máxima se alcanza en el pico Mulhacén, de 3.482 metros</p></div>
-						<div id='secDer'><a>Leer M&aacute;s</a></div>
-					</div>			
-		        </div>
-		        <!-- para las cajas con enlaces -->";
-		        include 'estructura/boxes.php';
-		        echo "<br class='clearfloat' />";
-			break;	
+			include './components/actividades.php';
+			break;
+			
 		case 'contacto':
-			echo "
-				<div class='mainContent'>
-		        	<h1>Contacta con nostros</h1>
-		        	<br />
-		        	<p>No dudes en contactar con nosotros para cualquier duda relacionada con el evento o ¡si deseas convertirte en uno 
-		        		de nuestros partnerts!</p>
-		        	<br />
-		        	<ul>
-		        		<li>Visita nuestra web: <a href='http://etsiit.ugr.es/'>http://etsiit.ugr.es</a></li>
-		        		<li>Llamanos: <strong>958 242 802</strong></li>
-						<li>Direcci&oacute;n: C/Periodista Daniel Saucedo Aranda, s/n 18071 GRANADA</li>
-		        		<li>Email: <a href='mailto:contacto@correo.com?Subject=Contacto%ETSIIT'>contacto@correo.com</a></li>
-						<li>
-							<form method='post' action='#' onsubmit='return contacto()'><table id='tablaContact'>
-								<tr>
-									<th>Nombre y apellidos</th>
-									<td><input autofocus id='nombre' type='text' value='' placeholder='Pedro Perez Perez' name='name'/></td>
-								</tr>
-								<tr>
-									<th>Email</th>
-									<td><input id='email' type='email' value='' placeholder='direccion@correo.es' name='email'/></td>
-								</tr>
-								<tr>
-									<th colspan='2'>Texto</th>							
-								</tr>	
-								<tr>
-									<td colspan='2'><textarea id='texto' rows='10' name='texto' placeholder='Escribe un comentario' value=''></textarea></td>
-								</tr>
-								<tr><td colspan='2'><input id='botonForm' type='submit' value='Enviar' /></td></tr>
-							</table></form>
-						</li>				
-		        	</ul>
-		        	
-		        	<br />
-		        	<h3>Become a Partnert</h3><br />
-		        	<ul>
-		        		<li>Telefono comercial: <b>555 998 637</b></li>
-		        		<li>Email comercial: <a href='mailto:comercial@correo.com?Subject=Become%a%Partnert'>comercial@correo.com</a></li>
-		        		<li>Encuentranos en Skype: <a href='skype:[comercialCuenta]?call>[comercialCuenta]'><img class='shadow' src='images/contacto/skype-icon.png' /></a></li>
-		        	</ul>		        	
-		        </div>";
-			break;	
+			include './components/contacto.php';
+			break;
+				
 		case 'horarios':
 			echo "
 				<div class='mainContent'>
