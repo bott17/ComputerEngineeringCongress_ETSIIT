@@ -7,17 +7,23 @@
 		require("./lib/phpmailer/PHPMailerAutoload.php");
 		require("./lib/phpmailer/class.smtp.php");
 		
-		$nombre = 'Nombre';
-		$telefono = 'tlf';
+		$nombre = $_POST['nombre'];
+		$email = $_POST['email'];
+		$texto = $_POST['texto'];
+		$sender = "congresowebetsiit@gmail.com";
+		$senderName = "Congreso ETSIIT";
+		$asunto = "Contato Congreso ETSIIT";
+		
+		$body = "Hemos recibido su petición, nos pondremos en contacto con usted lo antes posible.<br>";
+		$body .= $texto;
+		
 		
 		$mail = new PHPMailer();
 		
-		$body = 'Hola es una prueba';
-		$body .='ojalá funcione';
-		
-		//Luego tenemos que iniciar la validación por SMTP:
+		//Configuracion y validacion SMTP:
 		$mail->IsSMTP();
 		
+		// Modo depuracion texto y codigo de errores
 		$mail->SMTPDebug  = 1; 
 		
 		$mail->SMTPAuth = true;
@@ -27,25 +33,63 @@
 		$mail->SMTPSecure = "tls"; // sets the prefix to the servier
 		$mail->Port = 587; // Puerto a utilizar
 			 
-		//Con estas pocas líneas iniciamos una conexión con el SMTP. Lo que ahora deberíamos hacer, es configurar el mensaje a enviar, el //From, etc.
-		$mail->From = "congresowebetsiit@gmail.com"; // Desde donde enviamos (Para mostrar)
-		$mail->FromName = "Nombre";
+		//Configuracion del email a enviar
+		$mail->From = $sender; // Desde donde enviamos (Para mostrar)
+		$mail->FromName = $senderName;
 	
-		//Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
-		$mail->AddAddress("bott17@gmail.com"); // Esta es la dirección a donde enviamos
+		$mail->AddAddress($email); // Esta es la dirección a donde enviamos
 		$mail->IsHTML(true); // El correo se envía como HTML
-		$mail->Subject = "Titulo"; // Este es el titulo del email.
-		$body = "Hola mundo. Esta es la primer línea<br />";
+		$mail->Subject = $asunto; // Este es el asunto del email.
 		$mail->Body = $body; // Mensaje a enviar
 		$exito = $mail->Send(); // Envía el correo.
 	
 		//También podríamos agregar simples verificaciones para saber si se envió:
+		/*
 		if($exito){
 			echo 'El correo fue enviado correctamente.';
 		}else{
 			echo 'Hubo un inconveniente. Contacta a un administrador.' ;
-			echo $exito;
 		}
+		 */
+		
+		// Configuracion del email para el congreso
+		
+		$mail = new PHPMailer();
+		
+		//Configuracion y validacion SMTP:
+		$mail->IsSMTP();
+		
+		// Modo depuracion texto y codigo de errores
+		$mail->SMTPDebug  = 1; 
+		
+		$mail->SMTPAuth = true;
+		$mail->Host = 'smtp.gmail.com'; // SMTP a utilizar. Por ej. smtp.elserver.com
+		$mail->Username = 'congresowebetsiit@gmail.com'; // Correo completo a utilizar
+		$mail->Password = 'web12345678'; // Contraseña
+		$mail->SMTPSecure = "tls"; // sets the prefix to the servier
+		$mail->Port = 587; // Puerto a utilizar
+		
+		$mail->From = $email; 
+		$mail->FromName = $nombre;
+		$mail->AddReplyTo($email, $nombre);	
+	
+		$mail->AddAddress($sender); // Esta es la dirección a donde enviamos
+		$mail->IsHTML(true); // El correo se envía como HTML
+		$subject = "[Contacto] ";
+		$subject .= $nombre;
+		$mail->Subject = $subject; // Este es el asunto del email.
+		$mail->Body = $texto; // Mensaje a enviar
+		$exito = $mail->Send(); // Envía el correo.
+		
+		//También podríamos agregar simples verificaciones para saber si se envió:
+		/*
+		if($exito){
+			echo 'El correo fue enviado correctamente.';
+		}else{
+			echo 'Hubo un inconveniente. Contacta a un administrador.' ;
+		}
+		*/
+		
 	}
 	
 	if(isset($_POST['submit']))
@@ -80,7 +124,7 @@
 					<tr>
 						<th>Nombre y apellidos</th>
 						<td>
-						<input autofocus id='nombre' type='text' value='' placeholder='Pedro Perez Perez' name='name'/>
+						<input autofocus id='nombre' type='text' value='' placeholder='Pedro Perez Perez' name='nombre'/>
 						</td>
 					</tr>
 					<tr>
