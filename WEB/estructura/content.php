@@ -1,7 +1,7 @@
 <?php
 switch ($seccion) {
 		case 'actividades':
-			include './components/actividades.php';
+			include './seccion/actividades.php';
 			break;
 			
 		case 'contacto':
