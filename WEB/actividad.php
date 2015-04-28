@@ -35,7 +35,7 @@
         </div>  
             
         <!-- para la barra lateral de enlaces -->
-        <?php include 'estructura/sidebarSesion.php'; ?>
+        <?php include 'estructura/sidebarActividades.php'; ?>
         
         <!-- para el contenido de la pagina -->
         <?php include 'estructura/contentActividad.php'; ?>
