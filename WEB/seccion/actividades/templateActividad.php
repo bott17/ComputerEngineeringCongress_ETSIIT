@@ -14,7 +14,6 @@ switch ($act) {
 
 $array = explode("\n", file_get_contents($filename));
 
-$title = "hola";
 ?>
 
 <div class='mainContent'>
