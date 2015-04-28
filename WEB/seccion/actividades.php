@@ -2,7 +2,7 @@
 	<h2 id='tituloContent'>Actividades y Talleres</h2>
 	<div id='alhambra' class='actividad'>
 		<h2>Visita a la Alhambra (2 de junio)</h2>
-		<div id='secIzq'><img src='images/actividades/alhambra/alhambra.jpg' alt=''/>
+		<div id='secIzq'><img src='seccion/imagenes/actividades/alhambra/alhambra.jpg' alt=''/>
 		</div>
 		<div id='secCen'>
 			<p>
@@ -15,7 +15,7 @@
 	</div>
 	<div id='sierra_nevada' class='actividad'>
 		<h2>Subida a Sierra Nevada (3 de junio)</h2>
-		<div id='secIzq'><img src='images/actividades/sierra_nevada/sierra_nevada.jpg' alt=''/>
+		<div id='secIzq'><img src='seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg' alt=''/>
 		</div>
 		<div id='secCen'>
 			<p>

@@ -160,7 +160,7 @@
 			Email comercial: <a href='mailto:comercial@correo.com?Subject=Become%a%Partnert'>comercial@correo.com</a>
 		</li>
 		<li>
-			Encuentranos en Skype: <a href='skype:[comercialCuenta]?call>[comercialCuenta]'><img class='shadow' src='images/contacto/skype-icon.png' /></a>
+			Encuentranos en Skype: <a href='skype:[comercialCuenta]?call>[comercialCuenta]'><img class='shadow' src='seccion/imagenes/contacto/skype-icon.png' /></a>
 		</li>
 	</ul>
 </div>
