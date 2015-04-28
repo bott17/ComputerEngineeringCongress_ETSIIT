@@ -27,7 +27,7 @@
 	                <li><a href='#'>.......</a></li>";
 				break;		
 			case 'patrocinanos':
-				echo "<img src='images/patrocinador/touch.jpg' alt=''>";
+				echo "<img src='seccion/imagenes/patrocinador/touch.jpg' alt=''>";
 				break;
 			default:
 				echo "

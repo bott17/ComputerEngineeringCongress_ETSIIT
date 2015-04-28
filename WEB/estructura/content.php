@@ -5,7 +5,7 @@ switch ($seccion) {
 			break;
 			
 		case 'contacto':
-			include './components/contacto.php';
+			include './seccion/contacto.php';
 			break;
 				
 		case 'horarios':
@@ -127,7 +127,7 @@ switch ($seccion) {
 		        	</ul>
 					<form method='post' action='' enctype='x-www-form-urlencoded'>				
 						<table>
-							<tr><td colspan='2'><img class='shadow' src='images/inscripcion/JoinToday.png' /></td></tr>
+							<tr><td colspan='2'><img class='shadow' src='seccion/imagenes/inscripcion/JoinToday.png' /></td></tr>
 							<tr>
 								<th>Tu nombre: </th>
 								<td><input autofocus type='text' value='' placeholder='Pedro Perez Perez' name='name'></td>
@@ -195,27 +195,27 @@ switch ($seccion) {
 		        	<h3> Algunos de nuestros patrocinadores mas importantes</h3>
 		        	<br>
 		        	<div class='box'>
-		            	<div><a href='http://www.granada.org/'><img src='images/patrocinador/granada.jpg' alt=''></a></div>
+		            	<div><a href='http://www.granada.org/'><img src='seccion/imagenes/patrocinador/granada.jpg' alt=''></a></div>
 		                <a href='http://www.granada.org/'><h2>Granada</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://etsiit.ugr.es/'><img src='images/patrocinador/etsiit.jpg' alt=''></a></div>
+		            	<div><a href='http://etsiit.ugr.es/'><img src='seccion/imagenes/patrocinador/etsiit.jpg' alt=''></a></div>
 		                <a href='http://etsiit.ugr.es/'><h2>ETSIIT</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.dell.es/'><img  src='images/patrocinador/Dell-Logo.jpg' alt=''></a></div>
+		            	<div><a href='http://www.dell.es/'><img  src='seccion/imagenes/patrocinador/Dell-Logo.jpg' alt=''></a></div>
 		                <a href='http://www.dell.es/'><h2>Dell</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.whatsapp.com/'><img src='images/patrocinador/logo-wasap.png' alt=''></a></div>
+		            	<div><a href='http://www.whatsapp.com/'><img src='seccion/imagenes/patrocinador/logo-wasap.png' alt=''></a></div>
 		                <a href='http://www.whatsapp.com/'><h2>Whatsapp</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='http://www.tid.es/'><img src='images/patrocinador/logo-tid.jpeg' alt=''></a></div>
+		            	<div><a href='http://www.tid.es/'><img src='seccion/imagenes/patrocinador/logo-tid.jpeg' alt=''></a></div>
 		                <a href='http://www.tid.es/'><h2>Telefónica I+D</h2></a>
 		            </div>
 		            <div class='box'>
-		            	<div><a href='index.php?sec=contacto'><img src='images/patrocinador/logo-tu.jpg' alt=''></a></div>
+		            	<div><a href='index.php?sec=contacto'><img src='seccion/imagenes/patrocinador/logo-tu.jpg' alt=''></a></div>
 		                <a href='index.php?sec=contacto'><h2>Tu espacio te espera</h2></a>
 		            </div>
 		            <br class='clearfloat' />
@@ -239,7 +239,7 @@ switch ($seccion) {
 				Inscr&iacute;bete</strong>).
 			</p>
 
-			<h2 id='ETSIIT'>ETSIIT <img src='images/principal/etssit.jpeg' alt=''></h2>
+			<h2 id='ETSIIT'>ETSIIT <img src='seccion/imagenes/index/etssit.jpeg' alt=''></h2>
 			<p>
 				La Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación (ETSIIT) es un centro docente 
 				universitario perteneciente a la Universidad de Granada, dedicado a la enseñanza, la investigación y el 
@@ -256,7 +256,7 @@ switch ($seccion) {
     			<strong>Como llegar:</strong><br>			
 			</p>
 			
-			<h2 id='Granada'>Granada <img src='images/principal/granada_index.jpg' alt=''></h2>
+			<h2 id='Granada'>Granada <img src='seccion/imagenes/index/granada_index.jpg' alt=''></h2>
 			<p>
 				Granada es una ciudad y municipio español, capital de la provincia homónima, en la comunidad autónoma de 
 				Andalucía. Está situada en el centro de la comarca Vega de Granada, a una altitud de 680 msnm, en una 
