@@ -3,7 +3,6 @@
 	session_start();
 	$seccion="";
 	$ponencia="";
-	$dia="";
 	
 	if(isset($_REQUEST['sec'])){
 		$seccion=$_REQUEST['sec'];
@@ -29,7 +28,7 @@
 		<div class="slider"> <!-- Aqui va menu desplazable (poner lider dentro de class -->
             <div class="flexslider"> <!-- aqui flexslider -->
                 <ul class=""> <!-- aqui slides -->
-                    <li><img src="images/otros/logo_ugr.gif" alt=""></li>
+                    <li><img src="seccion/imagenes/index/logo_ugr.gif" alt=""></li>
                 </ul>
             </div>
         </div>  
