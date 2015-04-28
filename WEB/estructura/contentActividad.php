@@ -2,11 +2,11 @@
 switch ($actividad) {
 	case 'alh':
 			$act = 'actAlh';
-			include './seccion/actividades/actividad.php';
+			include './seccion/actividades/templateActividad.php';
 		break;
 	case 'sierra':
 			$act = 'actSierra';
-			include './seccion/actividades/actividad.php';
+			include './seccion/actividades/templateActividad.php';
 		break;
 		
 } 
