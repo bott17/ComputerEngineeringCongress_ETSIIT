@@ -12,9 +12,9 @@
 		$texto = $_POST['texto'];
 		$sender = "congresowebetsiit@gmail.com";
 		$senderName = "Congreso ETSIIT";
-		$asunto = "Contato Congreso ETSIIT";
+		$asunto = "Contacto Congreso ETSIIT";
 		
-		$body = "Hemos recibido su petición, nos pondremos en contacto con usted lo antes posible.<br>";
+		$body = "Hemos recibido su petici&oacute;n, nos pondremos en contacto con usted lo antes posible.<br>";
 		$body .= $texto;
 		
 		
@@ -24,7 +24,7 @@
 		$mail->IsSMTP();
 		
 		// Modo depuracion texto y codigo de errores
-		$mail->SMTPDebug  = 1; 
+		$mail->SMTPDebug  = false; 
 		
 		$mail->SMTPAuth = true;
 		$mail->Host = 'smtp.gmail.com'; // SMTP a utilizar. Por ej. smtp.elserver.com
@@ -41,7 +41,7 @@
 		$mail->IsHTML(true); // El correo se envía como HTML
 		$mail->Subject = $asunto; // Este es el asunto del email.
 		$mail->Body = $body; // Mensaje a enviar
-		$exito = $mail->Send(); // Envía el correo.
+		$mail->Send(); // Envía el correo.
 	
 		//También podríamos agregar simples verificaciones para saber si se envió:
 		/*
@@ -60,7 +60,7 @@
 		$mail->IsSMTP();
 		
 		// Modo depuracion texto y codigo de errores
-		$mail->SMTPDebug  = 1; 
+		$mail->SMTPDebug  = false; 
 		
 		$mail->SMTPAuth = true;
 		$mail->Host = 'smtp.gmail.com'; // SMTP a utilizar. Por ej. smtp.elserver.com
@@ -79,7 +79,7 @@
 		$subject .= $nombre;
 		$mail->Subject = $subject; // Este es el asunto del email.
 		$mail->Body = $texto; // Mensaje a enviar
-		$exito = $mail->Send(); // Envía el correo.
+		$mail->Send(); // Envía el correo.
 		
 		//También podríamos agregar simples verificaciones para saber si se envió:
 		/*
@@ -88,7 +88,8 @@
 		}else{
 			echo 'Hubo un inconveniente. Contacta a un administrador.' ;
 		}
-		*/
+		 */
+		
 		
 	}
 	
@@ -119,7 +120,7 @@
 			Email: <a href='mailto:contacto@correo.com?Subject=Contacto%ETSIIT'>contacto@correo.com</a>
 		</li>
 		<li>
-			<form method="post" action="./index.php?sec=contacto">
+			<form method="post" action="./index.php?sec=contacto" onsubmit="contacto()">
 				<table id='tablaContact'>
 					<tr>
 						<th>Nombre y apellidos</th>
