@@ -10,7 +10,7 @@
 			</p>
 		</div>
 		<div id='secDer'>
-			<a href="actividad.php?sec=$seccion&act=alh">Leer M&aacute;s</a>
+			<a href="actividad.php?sec=actividades&act=alh">Leer M&aacute;s</a>
 		</div>
 	</div>
 	<div id='sierra_nevada' class='actividad'>
@@ -23,7 +23,7 @@
 			</p>
 		</div>
 		<div id='secDer'>
-			<a href="actividad.php?sec=$seccion&act=sierra">Leer M&aacute;s</a>
+			<a href="actividad.php?sec=actividades&act=sierra">Leer M&aacute;s</a>
 		</div>
 	</div>
 </div>
