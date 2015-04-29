@@ -7,7 +7,5 @@ switch ($actividad) {
 	case 'sierra':
 			$act = 'actSierra';
 			include './seccion/actividades/templateActividad.php';
-		break;
-		
-} 
+}
 ?>
