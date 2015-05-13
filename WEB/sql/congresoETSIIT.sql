@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-05-2015 a las 16:56:57
+-- Tiempo de generación: 13-05-2015 a las 17:09:01
 -- Versión del servidor: 5.5.41-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.6
 
@@ -100,7 +100,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Telefono` int(11) NOT NULL,
   `Correo` varchar(200) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
+  `idCuota` int(11) NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  KEY `idCuota` (`idCuota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -119,6 +121,12 @@ ALTER TABLE `UsuarioActividad`
 --
 ALTER TABLE `UsuarioHotel`
   ADD CONSTRAINT `UsuarioHotel_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCuota`) REFERENCES `cuota` (`idCuota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
