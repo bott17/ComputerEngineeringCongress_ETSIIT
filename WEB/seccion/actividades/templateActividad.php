@@ -1,28 +1,31 @@
 <?php
-$rutaImg="./seccion/imagenes/actividades/";
-$filename;
+
+include 'extension/recuperador.php';
+
+$id = 0;
+
 switch ($act) {
 	case 'actAlh':
-		$filename = './info/actividades/actAlh.txt';
-		$rutaImg.="alhambra/";
+		$id = 1;
 		break;
 	case 'actSierra':
-		$filename='./info/actividades/actSierra.txt';
-		$rutaImg.="sierra_nevada/";
+		$id = 2;
 		break;
 }
 
-$array = explode("\n", file_get_contents($filename));
+$datos = searchAct($id);
 
 ?>
 
 <div class='mainContent'>
-	<h2 id='tituloContent'><?php echo $array[0]; ?></h2>
-	<h1 id'tituloContent2'><?php echo $array[1]; ?></h1>
-	<img src=<?php $rutaImg.=$array[3]; echo $rutaImg ;?> />
+	<h2 id='tituloContent'><?php echo $datos['denominacion']; ?></h2>
+	<h1 id'tituloContent2'><?php echo $datos['FechaHora']; ?></h1>
+	<img src=<?php echo $datos['foto']; ?> />
 	<p>
 		<br />
-		<?php echo $array[2]; ?>
+		<?php echo $datos['descripcion']; ?>
+		<br /><br/>
+		<b>Precio: </b><?php echo $datos['importe'];?>&euro;
 	</p>
 </div>
 <br class='clearfloat' />

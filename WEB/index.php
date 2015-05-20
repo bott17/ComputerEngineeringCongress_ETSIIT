@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <?php
-	session_start();
+	@session_start();
+
 	$seccion="";
 	
 	if(isset($_REQUEST['sec'])){
