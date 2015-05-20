@@ -3,11 +3,11 @@ $rutaImg="./seccion/imagenes/actividades/";
 $filename;
 switch ($act) {
 	case 'actAlh':
-		$filename = './info/actAlh.txt';
+		$filename = './info/actividades/actAlh.txt';
 		$rutaImg.="alhambra/";
 		break;
 	case 'actSierra':
-		$filename='./info/actSierra.txt';
+		$filename='./info/actividades/actSierra.txt';
 		$rutaImg.="sierra_nevada/";
 		break;
 }
