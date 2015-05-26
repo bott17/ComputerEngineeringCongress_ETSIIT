@@ -15,6 +15,15 @@ switch ($seccion) {
 	case 'patrocinanos' :
 		include './seccion/patrocinanos.php';
 		break;
+	case 'login':
+		include './seccion/login.php';
+		break;
+	case 'registro':
+		include './seccion/registro.php';
+		break;
+	case 'recordar':
+		include './seccion/recordar.php';
+		break;
 	default :
 		include './seccion/presentacion.php';
 		break;

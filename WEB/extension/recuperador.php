@@ -50,4 +50,14 @@ function searchActNOT($cod){
 		
 }
 
+function searchQuotaALL(){
+	$link = connect();
+	
+	$query = "select * from cuota";
+	$result = mysql_query($query, $link);
+	
+	$link = null;
+	return $result;	
+}
+
 ?>

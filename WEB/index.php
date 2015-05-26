@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <?php
 	@session_start();
+	
+	include 'extension/recuperador.php';
 
 	$seccion="";
 	
