@@ -18,6 +18,15 @@ switch ($seccion) {
 	case 'patrocinanos' :
 		$n = "CEIIE - Patrocinanos";
 		break;
+	case 'login':
+		$n = "CEIIE - Login";
+		break;
+	case 'registro':
+		$n = "CEIIE - Registro";
+		break;
+	case 'recordar':
+		$n = "CEIIE - Recordar contraseña";
+		break;
 	default :
 		$n = "CEIIE - Presentaci&oacute;n";
 		break;

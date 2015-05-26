@@ -1,7 +1,7 @@
 <header>
    	<div id="navheader">
    		<div id="izq"><h2><a href="./index.php">Congreso de Estudiantes de Ingenier&iacute;a Inform&aacute;tica</a></h2></div>
-   		<div id="der"><p>Zona de Usuario</br><a href="#">(Login)</a></p></div>    	
+   		<div id="der"><p>Zona de Usuario</br><a href="index.php?sec=login">(Login)</a></p></div>    	
    	</div>
     <div id="navcontainer">
     	<ul id="navlist" class="nav">
