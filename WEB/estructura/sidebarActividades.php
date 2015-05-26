@@ -1,25 +1,15 @@
 <?php
-
-	$urlBase = "actividad.php?sec=actividades&act=";
-	$actividadUrl= $urlBase; 
-	$nombreAct="";
 	
-	switch ($actividad) {
-		case 'alh':
-			$actividadUrl .= "sierra";
-			$nombreAct = "Sierra Nevada";
-			break;
-			
-		case 'sierra':
-			$actividadUrl .= "alh";
-			$nombreAct = "Visita a la Alhambra";
-			break;
-	}
+	$cod = $_GET['act'];
+
+	$arrayActividades = searchActNOT($cod);
+
 ?>
 
 <div class="sidebar1">
 	<h2>Otras actividades</h2>
-	<ul>
-		<li><a href=<?php echo $actividadUrl; ?>><?php echo $nombreAct; ?></a></li>
+	<ul> <!-- aqui hacer un for para cuando haya mas actividades -->
+		<?php $actividad = mysql_fetch_assoc($arrayActividades); ?>		
+		<li><a href="actividad.php?sec=actividades&act=<?php echo $actividad['codigo'];?>"><?php echo $actividad['denominacion']; ?></a></li>
 	</ul>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-function conect(){
+function connect(){
 	$link;
 	//conexion con la base de datos
 	if(!$link = mysql_connect("localhost","root","root"))
@@ -13,17 +13,41 @@ function conect(){
 	return $link;	
 }
 
-function searchAct($id){
-		
-	$link = conect();
+function searchActALL(){
+	$link = connect();
 	
-	$query = "select * from actividad where idActividad=".$id;
+	$query = "select * from actividad";
+	$result = mysql_query($query, $link);
+	
+	$link = null;
+	return $result;
+		
+}
+
+function searchAct($cod){
+		
+	$link = connect();
+	
+	$query = 'select * from actividad where codigo = "'.$cod.'"';
 	$result = mysql_query($query,$link);
 	
 	$link = null;
 	
 	return mysql_fetch_assoc($result);
 	
+}
+
+function searchActNOT($cod){
+	
+	$link = connect();
+	
+	$query = 'select * from actividad where codigo not in ("'.$cod.'")';
+	$result = mysql_query($query,$link);
+	
+	$link = null;
+	
+	return $result;
+		
 }
 
 ?>

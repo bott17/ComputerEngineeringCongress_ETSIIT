@@ -1,5 +1,8 @@
 <!DOCTYPE HTML>
 <?php
+
+	include 'extension/recuperador.php';
+
 	session_start();
 	$seccion="";
 	$actividad="";

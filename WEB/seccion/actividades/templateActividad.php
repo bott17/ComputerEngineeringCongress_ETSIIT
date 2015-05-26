@@ -1,19 +1,8 @@
 <?php
 
-include 'extension/recuperador.php';
+$cod = $_GET['act'];
 
-$id = 0;
-
-switch ($act) {
-	case 'actAlh':
-		$id = 1;
-		break;
-	case 'actSierra':
-		$id = 2;
-		break;
-}
-
-$datos = searchAct($id);
+$datos = searchAct($cod);
 
 ?>
 
