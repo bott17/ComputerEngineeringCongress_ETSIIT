@@ -1,29 +1,37 @@
+<?php 
+
+	include 'extension/recuperador.php';
+	$arrayActividades = searchActALL();
+
+?>
 <div class='mainContent'>
 	<h2 id='tituloContent'>Actividades y Talleres</h2>
-	<div id='alhambra' class='actividad'>
-		<h2>Visita a la Alhambra (2 de junio)</h2>
-		<div id='secIzq'><img src='seccion/imagenes/actividades/alhambra/alhambra.jpg' alt=''/>
+	<?php $actividad = mysql_fetch_assoc($arrayActividades); ?>
+	<div id='<?php echo $actividad['codigo'] ?>' class='actividad'>
+		<h2><?php echo $actividad['denominacion']." (".$actividad['FechaHora'].")"; ?></h2>
+		<div id='secIzq'><img src='<?php echo $actividad['foto']?>' alt=''/>
 		</div>
 		<div id='secCen'>
 			<p>
-				Es un rico complejo palaciego y fortaleza (alcázar o al-qasr القصر) que alojaba al monarca y a la corte del Reino nazarí de Granada. En 2011 se convirtió en el monumento más visitado de España, recibiendo la cifra histórica de 2310764 visitantes.
+				<?php echo $actividad['descripcion']; ?>
 			</p>
 		</div>
 		<div id='secDer'>
-			<a href="actividad.php?sec=actividades&act=alh">Leer M&aacute;s</a>
+			<a href="actividad.php?sec=actividades&act=<?php echo $actividad['codigo']; ?>">Leer M&aacute;s</a>
 		</div>
 	</div>
-	<div id='sierra_nevada' class='actividad'>
-		<h2>Subida a Sierra Nevada (3 de junio)</h2>
-		<div id='secIzq'><img src='seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg' alt=''/>
+	<?php $actividad = mysql_fetch_assoc($arrayActividades); ?>
+	<div id='<?php echo $actividad['codigo'] ?>' class='actividad'>
+		<h2><?php echo $actividad['denominacion']." (".$actividad['FechaHora'].")"; ?></h2>
+		<div id='secIzq'><img src='<?php echo $actividad['foto']?>' alt=''/>
 		</div>
 		<div id='secCen'>
 			<p>
-				Situada en Andalucía, extendiéndose por las provincias de Granada y Almería. Es el macizo montañoso de mayor altitud de toda Europa occidental, después de los Alpes. Su altitud máxima se alcanza en el pico Mulhacén, de 3.482 metros
+				<?php echo $actividad['descripcion']; ?>
 			</p>
 		</div>
 		<div id='secDer'>
-			<a href="actividad.php?sec=actividades&act=sierra">Leer M&aacute;s</a>
+			<a href="actividad.php?sec=actividades&act=<?php echo $actividad['codigo']; ?>">Leer M&aacute;s</a>
 		</div>
 	</div>
 </div>
