@@ -2,10 +2,10 @@
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 20-05-2015 a las 16:57:00
--- Versión del servidor: 5.5.41-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.6
+-- Host: localhost
+-- Generation Time: May 27, 2015 at 08:11 PM
+-- Server version: 5.5.43-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `congresoETSIIT`
+-- Database: `congresoETSIIT`
 --
 CREATE DATABASE IF NOT EXISTS `congresoETSIIT` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `congresoETSIIT`;
@@ -25,7 +25,7 @@ USE `congresoETSIIT`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `UsuarioActividad`
+-- Table structure for table `UsuarioActividad`
 --
 
 DROP TABLE IF EXISTS `UsuarioActividad`;
@@ -39,13 +39,14 @@ CREATE TABLE IF NOT EXISTS `UsuarioActividad` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `UsuarioHotel`
+-- Table structure for table `UsuarioHotel`
 --
 
 DROP TABLE IF EXISTS `UsuarioHotel`;
 CREATE TABLE IF NOT EXISTS `UsuarioHotel` (
   `idHotel` int(11) NOT NULL AUTO_INCREMENT,
   `idUsuario` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
   `fechaEntrada` varchar(100) NOT NULL,
   `fechaSalida` varchar(100) NOT NULL,
   `TipoHabitacion` varchar(100) NOT NULL,
@@ -56,12 +57,13 @@ CREATE TABLE IF NOT EXISTS `UsuarioHotel` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `actividad`
+-- Table structure for table `actividad`
 --
 
 DROP TABLE IF EXISTS `actividad`;
 CREATE TABLE IF NOT EXISTS `actividad` (
   `idActividad` int(11) NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(100) NOT NULL,
   `denominacion` varchar(50) NOT NULL,
   `FechaHora` varchar(50) NOT NULL,
   `descripcion` varchar(10000) NOT NULL,
@@ -71,17 +73,17 @@ CREATE TABLE IF NOT EXISTS `actividad` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `actividad`
+-- Dumping data for table `actividad`
 --
 
-INSERT INTO `actividad` (`idActividad`, `denominacion`, `FechaHora`, `descripcion`, `foto`, `importe`) VALUES
-(1, 'Visita a la Alhambra', '2 julio, 11:30', 'Es un rico complejo palaciego y fortaleza (alcázar o al-qasr ?????) que alojaba al monarca y a la corte del Reino nazarí de Granada. En 2011 se convirtió en el monumento más visitado de España, recibiendo la cifra histórica de 2310764 visitantes. ', './seccion/imagenes/actividades/alhambra/alhambra.jpg', 4.5),
-(2, 'Subida a Sierra Nevada', '3 julio, 7:45', '\r\nSituada en Andalucía, extendiéndose por las provincias de Granada y Almería. Es el macizo montañoso de mayor altitud de toda Europa occidental, después de los Alpes. Su altitud máxima se alcanza en el pico Mulhacén, de 3.482 metros ', './seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg', 12);
+INSERT INTO `actividad` (`idActividad`, `codigo`, `denominacion`, `FechaHora`, `descripcion`, `foto`, `importe`) VALUES
+(1, 'alhambra', 'Visita a la Alhambra', '2 julio, 11:30', 'Es un rico complejo palaciego y fortaleza (alcazar o al-qasr) que alojaba al monarca y a la corte del Reino nazari de Granada. En 2011 se convirtio en el monumento mas visitado de Espana, recibiendo la cifra historica de 2310764 visitantes. ', './seccion/imagenes/actividades/alhambra/alhambra.jpg', 4.5),
+(2, 'sierra_nevada', 'Subida a Sierra Nevada', '3 julio, 7:45', 'Situada en Andalucia, extendiendose por las provincias de Granada y Almeria. Es el macizo montanoso de mayor altitud de toda Europa occidental, despues de los Alpes. Su altitud maxima se alcanza en el pico Mulhacen, de 3.482 metros ', './seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg', 12);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cuota`
+-- Table structure for table `cuota`
 --
 
 DROP TABLE IF EXISTS `cuota`;
@@ -91,12 +93,21 @@ CREATE TABLE IF NOT EXISTS `cuota` (
   `descripcion` varchar(100) NOT NULL,
   `importe` double NOT NULL,
   PRIMARY KEY (`idCuota`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `cuota`
+--
+
+INSERT INTO `cuota` (`idCuota`, `denominacion`, `descripcion`, `importe`) VALUES
+(1, 'prueba1', 'prueba1', 10),
+(2, 'prueba2', 'prueba2', 14),
+(3, 'prueba3', 'prueba3', 20);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 DROP TABLE IF EXISTS `usuario`;
@@ -105,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Nombre` varchar(50) NOT NULL,
   `Apellidos` varchar(200) NOT NULL,
   `Centro de trabajo` varchar(200) NOT NULL,
-  `Telefono` int(11) NOT NULL,
+  `Telefono` int(9) NOT NULL,
   `Correo` varchar(200) NOT NULL,
   `Password` varchar(100) NOT NULL,
   `idCuota` int(11) NOT NULL,
@@ -114,24 +125,24 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `UsuarioActividad`
+-- Constraints for table `UsuarioActividad`
 --
 ALTER TABLE `UsuarioActividad`
   ADD CONSTRAINT `UsuarioActividad_ibfk_1` FOREIGN KEY (`idActividad`) REFERENCES `actividad` (`idActividad`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `UsuarioActividad_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `UsuarioHotel`
+-- Constraints for table `UsuarioHotel`
 --
 ALTER TABLE `UsuarioHotel`
   ADD CONSTRAINT `UsuarioHotel_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `usuario`
+-- Constraints for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCuota`) REFERENCES `cuota` (`idCuota`) ON DELETE NO ACTION ON UPDATE NO ACTION;

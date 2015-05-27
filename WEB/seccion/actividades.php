@@ -1,6 +1,5 @@
 <?php 
 
-	include 'extension/recuperador.php';
 	$arrayActividades = searchActALL();
 
 ?>
