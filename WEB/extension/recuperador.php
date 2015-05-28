@@ -95,4 +95,12 @@ function loginUsuario($cor,$pas) {
  
 }
 
+function searchUsusario($nom){
+	$link = connect();	
+	$query = 'select * from usuario where nombre = "'.$nom.'"';
+	$result = mysql_query($query, $link);	
+	$link = null;
+	return mysql_fetch_assoc($result);		
+}
+
 ?>

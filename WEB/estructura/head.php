@@ -27,6 +27,9 @@ switch ($seccion) {
 	case 'recordar':
 		$n = "CEIIE - Recordar contraseña";
 		break;
+	case 'miperfil':
+		$n = "CEIIE - Mi perfil";
+		break;
 	default :
 		$n = "CEIIE - Presentaci&oacute;n";
 		break;

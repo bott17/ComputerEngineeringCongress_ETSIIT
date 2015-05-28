@@ -24,6 +24,12 @@ switch ($seccion) {
 	case 'recordar':
 		include './seccion/recordar.php';
 		break;
+	case 'miperfil':
+		include './seccion/miperfil.php';
+		break;
+	case 'logout':
+		include './seccion/logout.php';
+		break;
 	default :
 		include './seccion/presentacion.php';
 		break;

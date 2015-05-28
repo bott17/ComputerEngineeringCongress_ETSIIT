@@ -18,8 +18,10 @@
 			case 'patrocinanos':
 				include './seccion/sidebar/sidebarPatrocinanos.php';
 				break;
-			case 'login' && 'registro' && 'recordar':
+			case 'login': case 'registro': case 'recordar':
 				include './seccion/sidebar/sidebarLogin.php';
+				break;
+			case 'miperfil':
 				break;
 			default:
 				include './seccion/sidebar/sidebarPrincipal.php';

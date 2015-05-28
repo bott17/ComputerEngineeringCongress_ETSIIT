@@ -305,6 +305,23 @@ footer p a img{
 	width: 30%;
 	height: 100%;
 }
+#der2 p{
+	font-size:20pt;
+	margin: 40px 0 0 50px;	
+	color: white;	
+	text-align: center;
+}
+#der2 p a{
+	text-decoration:none;
+	font-size: 14pt;
+	margin-left: 0;
+	color: cyan;
+}
+#navheader #der2{
+	float:right;
+	width: 30%;
+	height: 100%;
+}
 #navcontainer {
 	z-index: 2;
 }

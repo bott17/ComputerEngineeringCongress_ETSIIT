@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 27, 2015 at 08:11 PM
+-- Generation Time: May 28, 2015 at 08:01 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -122,7 +122,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `idCuota` int(11) NOT NULL,
   PRIMARY KEY (`idUsuario`),
   KEY `idCuota` (`idCuota`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`) VALUES
+(1, 'uno', 'uno', 'uno', 123, 'uno@uno.uno', '1eaa8bb195869a23f081acbb5bf08527', 1),
+(2, 'dos', 'dos', 'dos', 123, 'dos@dos.dos', '0196f6c4f97df3f48d570c23e46501ae', 1);
 
 --
 -- Constraints for dumped tables
