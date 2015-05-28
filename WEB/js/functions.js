@@ -81,3 +81,46 @@ function sliderPatrocinadores(){
 	if(index>=10) index=0;
 	
 }
+
+function validaRegistro(){
+	
+	var nombre = document.getElementById('nombre').value;
+	var apellidos = document.getElementById('apellidos').value;
+	var centro = document.getElementById('centro').value;
+	var telefono = document.getElementById('telefono').value;
+	var correo = document.getElementById('correo').value;
+	var pass1 = document.getElementById('pass1').value;
+	var pass2 = document.getElementById('pass2').value;
+	var mensaje = '';
+	
+	//expresion regular
+	var Vema = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;	
+	
+	if(nombre == '')
+		mensaje += 'Nombre no valido\n';
+		
+	if(apellidos == '')
+		mensaje += 'Apellidos no valido\n';
+	
+	if(centro == '')
+		mensaje += 'Centro de trabajo no valido\n';
+	
+	if(telefono == '')
+		mensaje += 'Telefono no valido\n';
+		
+	if (!(correo.match(Vema)) || correo == '')
+		mensaje += 'Email no valido \n';	
+		
+	if(pass1 == '' || pass1 != pass2)
+		mensaje += 'Las contraseñas no coinciden	\n';
+	
+	if(mensaje != ''){
+		alert(mensaje);
+		return false
+	}
+	else{
+		alert('Registro valido');
+		return true;
+	}
+	
+}
