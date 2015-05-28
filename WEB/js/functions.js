@@ -116,7 +116,7 @@ function validaRegistro(){
 	
 	if(mensaje != ''){
 		alert(mensaje);
-		return false
+		return false;
 	}
 	else{
 		alert('Registro valido');

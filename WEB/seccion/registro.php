@@ -1,5 +1,11 @@
 <?php 
 
+	if(empty($usuario)){
+		//header('location: http://www.marca.com');
+	}
+
+	echo $usuario;
+
 	$nom = "";
 	$ape = "";
 	$cen = "";
@@ -14,16 +20,17 @@
 		$ape = $_REQUEST['apellidos'];
 		$cen = $_REQUEST['centro'];
 		$tel = $_REQUEST['telefono'];
+		$pas = $_REQUEST['pass1'];
 		$cor = $_REQUEST['correo'];
 		$cuo = $_REQUEST['cuota'];
 		
-		insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo);
+		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo);
 	}
 
 ?>
 <div class='mainContent'>
 	<h2>Registro en el congreso</h2>
-	<form method="post" action="" onsubmit="validaRegistro()">
+	<form method="post" action="" onsubmit="return validaRegistro()">
 		<table>
 			<tr>
 				<th>Nombre</th>
