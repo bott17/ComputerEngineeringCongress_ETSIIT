@@ -64,10 +64,9 @@ function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo){
 				values ("'.$nom.'","'.$ape.'","'.$cen.'",'.$tel.',"'.$cor.'","'.$pasV.'",'.$id.')';
 	mysql_query($query, $link);
 	
-	/*insert into usuario (Nombre, Apellidos, 'Centro de trabajo', Telefono, Correo, Password, idCuota)
-				values ("sdf","sdf","sdf",2234,"asd","asd",1)*/
+	echo $cor;
 	
-	//funcion de login aqui
+	loginUsuario($cor, $pasF);
 		
 	$link = null;
 }
@@ -75,21 +74,24 @@ function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo){
 function loginUsuario($cor,$pas) {
  	$link = connect();
     $query='select * from usuario where correo="'.$cor.'"';
-    $result = mysql_query($query,$link);
-    
-    $usuario = mysql_fetch_assoc($result);
-	$hash = md5($pas); //encriptamos la contraseña
- 
-    if($usuario){
-    	if($usuario['Password']==$hash){
+    $result = mysql_query($query,$link);    
+    $user = mysql_fetch_assoc($result);
+	$hash = md5($pas); //encriptamos la contraseña 
+    if($user){
+    	if($user['Password']==$hash){
     		@session_start();
-			$_SESSION['usuario']=$usuario['Nombre'];
+			$_SESSION['usuario']=$user['Nombre'];
 			header('location: ./index.php');
     	}
 		else{
-			//poner mensajes que salgan debajo del cuadro del login			
+			//poner mensajes que salgan debajo del cuadro del login	
+			return 'Contraseña erronea';		
 		}
-    }
+	}
+	else{
+		return 'Usuario no encontrado';
+	}	
+	$link = null;
  
 }
 
