@@ -1,6 +1,8 @@
 <?php 
 
 	$fila = searchUsusario($_REQUEST['user']);
+	$cuota = searchQuota2($fila['idCuota']);
+	$arrayActividades = searchActividadesUsuario($fila['idUsuario']);
 
 ?>
 <div class='mainContent'>
@@ -25,6 +27,27 @@
 		<tr>
 			<th>Correo:</th>
 			<td><?php echo $fila['Correo']; ?></td>
+		</tr>
+		<tr>
+			<th>Cuota:</th>
+			<td><?php echo $cuota['denominacion']; ?></td>
+		</tr>
+		<tr>
+			<th>Actividades:</th>
+			<td>
+				<table>
+					<?php 					
+						while($row = mysql_fetch_assoc($arrayActividades)){
+							$actividad = searchActividad($row['idActividad']);
+							echo '<tr><td>'.$actividad['denominacion'].'</td></tr>';							
+						}					
+					?>				
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th>Precio total:</th>
+			<td><?php echo $fila['importe']; ?>&euro;</td>
 		</tr>
 	</table>
 </div>

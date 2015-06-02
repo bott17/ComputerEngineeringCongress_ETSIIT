@@ -55,6 +55,15 @@ function searchQuota($nom){
 	return $fila['idCuota'];	
 }
 
+function searchQuota2($id){
+	$link = connect();	
+	$query = 'select * from cuota where idCuota = '.$id;
+	$result = mysql_query($query,$link);	
+	$link = null;
+	return mysql_fetch_assoc($result);	
+}
+
+
 function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
 	$link = connect();	
 	$pasV = md5($pasF);
@@ -165,6 +174,23 @@ function checkUser($email){
 }
 
 
+
+function searchActividadesUsuario($id){
+	$link = connect();	
+	$query = 'SELECT * FROM `UsuarioActividad` WHERE idUsuario = '.$id;
+	$result = mysql_query($query,$link);	
+	$link = null;
+	return $result;	
+}
+
+function searchActividad($id){
+	$link = connect();	
+	$query = 'SELECT * FROM `actividad` WHERE idActividad = '.$id;
+	$result = mysql_query($query,$link);	
+	$link = null;
+	return mysql_fetch_assoc($result);	
+}
+
 function get_web_page($url) {
     $options = array(
         CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -187,4 +213,5 @@ function get_web_page($url) {
 
     return $content;
  }
+
 ?>

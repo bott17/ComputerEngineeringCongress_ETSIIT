@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <?php
-
+	@session_start();
+	$usu = $_SESSION['usuario'];
 	include 'extension/recuperador.php';
 
 	session_start();
