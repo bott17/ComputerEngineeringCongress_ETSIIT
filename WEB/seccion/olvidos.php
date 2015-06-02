@@ -1,4 +1,11 @@
 <div class='mainContent'>
+	<script>
+		var emailCorrecto = 0;
+		
+		function marcar(){
+			return emailCorrecto;
+		}
+	</script>
 	<?php 
 	
 		include 'funcionesPHP/mailer.php';
@@ -8,13 +15,13 @@
 		<table>
 			<tr>
 				<th>Email de tu cuenta</th>
-				<td><input id='email' type="text" name="email" /></td>
+				<td><input id='email' type='email' value='' placeholder='direccion@correo.es' name='email'/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input id='botonForm' type='submit' name='recover' value='Recuperar contraseña' /></td>
+				<td colspan="2"><input id='botonForm' type='submit' name='recover' value='Recuperar contraseña' onclick="emailCorrecto=recoverCheck();"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><a href="">Restablecer contraseña</a></td>
+				<td colspan="2"><input id='botonForm' type='submit' name='restablecer' value='Restablecer contraseña' onclick="recoverCheck()"/></td>
 			</tr>
 		</table>		
 	</form>
