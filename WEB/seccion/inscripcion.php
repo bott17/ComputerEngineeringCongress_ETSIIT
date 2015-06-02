@@ -1,16 +1,19 @@
+<?php
+
+	$arrayCuotas = searchQuotaALL();
+
+?>
 <div class='mainContent'>
 	<h2>Inscribete con tan solo unos datos...</h2>
 	<ul id="precio">
 		Cuotas de isncripci&oacute;n:
-		<li>
-			Alumno 5&euro;
-		</li>
-		<li>
-			Profesor 6&euro;
-		</li>
-		<li>
-			Otro 8&euro;
-		</li>
+		<?php 
+		
+			while($cuota = mysql_fetch_assoc($arrayCuotas)){
+				echo '<li><b>'.$cuota['denominacion'].' ('.$cuota['importe'].'&euro;)</b><br>'.$cuota['descripcion'].'<br><br></li>';				
+			}
+		
+		?>
 	</ul>
 	<form id="formulario" method='post' action='' enctype='x-www-form-urlencoded'>
 		<table>

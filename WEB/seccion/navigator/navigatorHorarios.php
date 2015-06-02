@@ -16,10 +16,13 @@
 	<a class='navlist'  href='index.php?sec=actividades'>Actividades y Talleres</a>
 	<ul  class='subnavlist'>
 		<li>
-			<a href='index.php?sec=actividades#actividad1'>Visita guiada a la Alhambra</a>
+			<a href='index.php?sec=actividades#alhambra'>Visita guiada a la Alhambra</a>
 		</li>
 		<li>
-			<a href='index.php?sec=actividades#actividad1'>Subida a Sierra Nevada</a>
+			<a href='index.php?sec=actividades#sierra_nevada'>Subida a Sierra Nevada</a>
+		</li>
+		<li>
+			<a href='index.php?sec=actividades#cena_gala'>Cena de gala</a>
 		</li>
 	</ul>
 </li>
