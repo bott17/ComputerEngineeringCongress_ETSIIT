@@ -29,6 +29,10 @@ function contacto(){
 	return true;
 }
 
+function recover(){
+	var email = document.getElementById('email').value;
+}
+
 
 
 /**

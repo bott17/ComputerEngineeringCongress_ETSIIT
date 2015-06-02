@@ -30,6 +30,9 @@ switch ($seccion) {
 	case 'logout':
 		include './seccion/logout.php';
 		break;
+	case 'olvidos':
+		include './seccion/olvidos.php';
+		break;
 	default :
 		include './seccion/presentacion.php';
 		break;

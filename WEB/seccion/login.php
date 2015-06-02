@@ -31,6 +31,7 @@
 				</td>
 			</tr>
 			<tr><td colspan="2"><?php echo $mensaje; ?></td></tr>
+			<tr><td colspan="2"><a href="index.php?sec=olvidos">Olvide mi contraseña</a></td></tr>
 		</table>		
 	</form>
 	
