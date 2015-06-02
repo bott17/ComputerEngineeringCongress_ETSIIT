@@ -3,9 +3,8 @@
 	function sendEmail($filtro){
 	
 		$email = $_POST['email'];
-		echo "asss a as " + $email;
 		
-		if($email != "" && marcar()){
+		if($email != ""){
 	
 			require("./lib/phpmailer/PHPMailerAutoload.php");
 			require("./lib/phpmailer/class.smtp.php");
@@ -14,13 +13,16 @@
 			$senderName = "Congreso ETSIIT";
 			
 			 if ($filtro == "recuperar") {
+			 	$password = getPassword($email);
 	        	$asunto = "Recuperar contraseña";
 				$body = "Has solicitado recuperar tu password...";
-				$body2 = "Solicitud de recuperacion de password";
+				$body .= $password;
+				$body2 = "Solicitud de recuperacion de password " + $email;
+				
 		    } else if ($filtro == "restablecer"){
 		        $asunto = "Reestablecer contraseña";
 				$body = "Has solicitado reestablecer tu password...";
-				$body2 = "Solicitud de restablecimiento de password";
+				$body2 = "Solicitud de restablecimiento de password usuario " + $email;
 		    }
 			
 			
@@ -30,7 +32,7 @@
 			$mail->IsSMTP();
 			
 			// Modo depuracion texto y codigo de errores
-			$mail->SMTPDebug  = 2; 
+			$mail->SMTPDebug  = false; 
 			
 			$mail->SMTPAuth = true;
 			$mail->Host = 'smtp.gmail.com'; // SMTP a utilizar. Por ej. smtp.elserver.com
