@@ -140,6 +140,41 @@ function searchActividades(){
 	return $result;	
 }
 
+function getPassword($email){
+	$link = connect();	
+	$query = 'select Password from usuario where correo = "' .$email. '"';
+	$result = mysql_query($query, $link);
+	$response = mysql_fetch_assoc($result);
+	$response = get_web_page("http://md5.gromweb.com/query/" . $response['Password']);	
+	$link = null;
+	return $response;	
+}
+
+function changePassword($email, $password){
+	$link = connect();	
+	$pasV = md5($password);
+	$query = 'update usuario set Password = "' .$pasV . '" where Correo = "' .$email. '"';
+	mysql_query($query, $link);
+		
+	$link = null;
+}
+
+function checkUser($email){
+	$link = connect();	
+	$query = 'select idUsuario from usuario where correo = "' .$email. '"';
+	$result = mysql_query($query, $link);
+	$result = mysql_fetch_assoc($result);
+	
+	if($result != ""){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+
+
 function searchActividadesUsuario($id){
 	$link = connect();	
 	$query = 'SELECT * FROM `UsuarioActividad` WHERE idUsuario = '.$id;
@@ -155,5 +190,28 @@ function searchActividad($id){
 	$link = null;
 	return mysql_fetch_assoc($result);	
 }
+
+function get_web_page($url) {
+    $options = array(
+        CURLOPT_RETURNTRANSFER => true,   // return web page
+        CURLOPT_HEADER         => false,  // don't return headers
+        CURLOPT_FOLLOWLOCATION => true,   // follow redirects
+        CURLOPT_MAXREDIRS      => 10,     // stop after 10 redirects
+        CURLOPT_ENCODING       => "",     // handle compressed
+        CURLOPT_USERAGENT      => "test", // name of client
+        CURLOPT_AUTOREFERER    => true,   // set referrer on redirect
+        CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
+        CURLOPT_TIMEOUT        => 120,    // time-out on response
+    ); 
+
+    $ch = curl_init($url);
+    curl_setopt_array($ch, $options);
+
+    $content  = curl_exec($ch);
+
+    curl_close($ch);
+
+    return $content;
+ }
 
 ?>
