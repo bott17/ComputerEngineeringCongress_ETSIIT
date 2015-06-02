@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 28, 2015 at 08:01 PM
+-- Generation Time: Jun 02, 2015 at 11:46 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -35,6 +35,19 @@ CREATE TABLE IF NOT EXISTS `UsuarioActividad` (
   PRIMARY KEY (`idActividad`,`idUsuario`),
   KEY `idUsuario` (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `UsuarioActividad`
+--
+
+INSERT INTO `UsuarioActividad` (`idActividad`, `idUsuario`) VALUES
+(2, 1),
+(3, 2),
+(2, 3),
+(3, 3),
+(1, 4),
+(2, 4),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -70,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `actividad` (
   `foto` varchar(100) NOT NULL,
   `importe` double NOT NULL,
   PRIMARY KEY (`idActividad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `actividad`
@@ -78,7 +91,8 @@ CREATE TABLE IF NOT EXISTS `actividad` (
 
 INSERT INTO `actividad` (`idActividad`, `codigo`, `denominacion`, `FechaHora`, `descripcion`, `foto`, `importe`) VALUES
 (1, 'alhambra', 'Visita a la Alhambra', '2 julio, 11:30', 'Es un rico complejo palaciego y fortaleza (alcazar o al-qasr) que alojaba al monarca y a la corte del Reino nazari de Granada. En 2011 se convirtio en el monumento mas visitado de Espana, recibiendo la cifra historica de 2310764 visitantes. ', './seccion/imagenes/actividades/alhambra/alhambra.jpg', 4.5),
-(2, 'sierra_nevada', 'Subida a Sierra Nevada', '3 julio, 7:45', 'Situada en Andalucia, extendiendose por las provincias de Granada y Almeria. Es el macizo montanoso de mayor altitud de toda Europa occidental, despues de los Alpes. Su altitud maxima se alcanza en el pico Mulhacen, de 3.482 metros ', './seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg', 12);
+(2, 'sierra_nevada', 'Subida a Sierra Nevada', '3 julio, 7:45', 'Situada en Andalucia, extendiendose por las provincias de Granada y Almeria. Es el macizo montanoso de mayor altitud de toda Europa occidental, despues de los Alpes. Su altitud maxima se alcanza en el pico Mulhacen, de 3.482 metros ', './seccion/imagenes/actividades/sierra_nevada/sierra_nevada.jpg', 9),
+(3, 'cena_gala', 'Cena de Gala', '3 julio, 21:00', 'Cena de gala que se celebrara al terminar el congreso.', './seccion/imagenes/actividades/cena_gala/cena_gala.jpg', 7);
 
 -- --------------------------------------------------------
 
@@ -100,9 +114,9 @@ CREATE TABLE IF NOT EXISTS `cuota` (
 --
 
 INSERT INTO `cuota` (`idCuota`, `denominacion`, `descripcion`, `importe`) VALUES
-(1, 'prueba1', 'prueba1', 10),
-(2, 'prueba2', 'prueba2', 14),
-(3, 'prueba3', 'prueba3', 20);
+(1, 'Estudiante', 'Cuota mínima solo para asistir al congreso.', 6),
+(2, 'Investigador', 'Cuota intermedia, incluye cena de gala', 10),
+(3, 'Premium', 'Cuota premium, incluye invitacion a todas la actividades y la cena de gla', 20);
 
 -- --------------------------------------------------------
 
@@ -120,17 +134,20 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Correo` varchar(200) NOT NULL,
   `Password` varchar(100) NOT NULL,
   `idCuota` int(11) NOT NULL,
+  `importe` double NOT NULL,
   PRIMARY KEY (`idUsuario`),
   KEY `idCuota` (`idCuota`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`) VALUES
-(1, 'uno', 'uno', 'uno', 123, 'uno@uno.uno', '1eaa8bb195869a23f081acbb5bf08527', 1),
-(2, 'dos', 'dos', 'dos', 123, 'dos@dos.dos', '0196f6c4f97df3f48d570c23e46501ae', 1);
+INSERT INTO `usuario` (`idUsuario`, `Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`, `importe`) VALUES
+(1, 'Pablo', 'Valenzuela', 'ETSIIT', 637187471, 'pva_@jotmeil.es', 'bc9d7c51e75b3bf44497bd6c21cccd3b', 1, 14),
+(2, 'George', 'Renk', 'Us Or', 98746536, 'georgo@kloo.oi', 'b37e14f04c907a77c836052c0e5a6837', 2, 10),
+(3, 'Timo', 'Kotipelto', 'Jarii', 2147483647, 'timoko@tipel.to', '0f05e3d167ae9f1966110bed552c23a1', 2, 19),
+(4, 'MC Dinero', 'Dinero', 'dinero', 46734225, 'dinero@aprende.algo', 'c02138b94508ec621890a1f0899c1678', 3, 20);
 
 --
 -- Constraints for dumped tables

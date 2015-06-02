@@ -55,20 +55,40 @@ function searchQuota($nom){
 	return $fila['idCuota'];	
 }
 
-function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo){
+function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
 	$link = connect();	
 	$pasV = md5($pasF);
 	$id = searchQuota($cuo);
 	$query = 'insert into usuario 
-				(`Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`)
-				values ("'.$nom.'","'.$ape.'","'.$cen.'",'.$tel.',"'.$cor.'","'.$pasV.'",'.$id.')';
+				(`Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`,`importe`)
+				values ("'.$nom.'","'.$ape.'","'.$cen.'",'.$tel.',"'.$cor.'","'.$pasV.'",'.$id.','.$imp.')';
 	mysql_query($query, $link);
 	
-	echo $cor;
+	switch ($id) {
+		case 2:
+			insertActividadUsuario($nom, 3);
+			break;
+		
+		case 3:
+			insertActividadUsuario($nom, 1);
+			insertActividadUsuario($nom, 2);
+			insertActividadUsuario($nom, 3);
+			break;
+	}
 	
 	loginUsuario($cor, $pasF);
 		
 	$link = null;
+}
+
+function insertActividadUsuario($nom,$act){
+	$user = searchUsusario($nom);
+	$link = connect();	
+	if(!empty($act)){
+		$query = 'INSERT INTO `UsuarioActividad`(`idActividad`, `idUsuario`) VALUES ('.$act.','.$user['idUsuario'].')';
+		mysql_query($query, $link);
+	}		
+	$link = null;	
 }
 
 function loginUsuario($cor,$pas) {
@@ -101,6 +121,14 @@ function searchUsusario($nom){
 	$result = mysql_query($query, $link);	
 	$link = null;
 	return mysql_fetch_assoc($result);		
+}
+
+function searchActividades(){
+	$link = connect();	
+	$query = 'select * from actividad';
+	$result = mysql_query($query,$link);	
+	$link = null;
+	return $result;	
 }
 
 ?>
