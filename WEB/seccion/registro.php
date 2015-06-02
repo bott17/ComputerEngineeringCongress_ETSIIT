@@ -1,8 +1,6 @@
 <?php 
 
-	if(empty($usuario)){
-		//header('location: http://www.marca.com');
-	}
+	if(empty($usuario)){}
 
 	echo $usuario;
 
@@ -14,6 +12,11 @@
 	$pas1 = "";
 	$pas2 = "";	
 	$cuo = "";
+	$imp = "";
+	
+	$act1 = "";
+	$act2 = "";
+	$act3 = "";
 	
 	if(isset($_REQUEST['bRegistrar'])){
 		$nom = $_REQUEST['nombre'];
@@ -23,10 +26,19 @@
 		$pas = $_REQUEST['pass1'];
 		$cor = $_REQUEST['correo'];
 		$cuo = $_REQUEST['cuota'];
+		$imp = $_REQUEST['importe'];
 		
-		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo);
+		$act1 = $_REQUEST['1'];
+		$act2 = $_REQUEST['2'];
+		$act3 = $_REQUEST['3'];	
+		
+		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo,$imp);
+		
+		insertActividadUsuario($nom, $act1);
+		insertActividadUsuario($nom, $act2);
+		insertActividadUsuario($nom, $act3);
+		
 	}
-
 ?>
 <div class='mainContent'>
 	<h2>Registro en el congreso</h2>
@@ -62,7 +74,7 @@
 			</tr>
 			<tr>
 				<th>Elige cuota</th>
-				<td><select name="cuota">
+				<td><select name="cuota" id="cuota" onchange="updateImporteRegistroCuota()">
 					<?php 
 						$cuota = searchQuotaALL();
 						while($fila = mysql_fetch_assoc($cuota)){
@@ -72,8 +84,31 @@
 				</select></td>
 			</tr>
 			<tr>
-				<th>hay que poner mas cosas</th>
-				<td><input type="text" name="pass2" /></td>
+				<th>Actividades</th>
+				<td>
+					<?php $actArray = searchActividades(); ?>
+					<table>
+						<tr>
+							<?php $actividad = mysql_fetch_assoc($actArray); ?>
+							<th ><?php echo $actividad['denominacion']; ?>(<?php echo $actividad['importe']; ?>&euro;)</th>
+							<td><input type="checkbox" onclick="updateImporteRegistroActividad(this)" name="<?php echo $actividad['idActividad']; ?>" value="<?php echo $actividad['idActividad']; ?>" id="<?php echo $actividad['codigo']; ?>"/></td>
+						</tr>
+						<tr>
+							<?php $actividad = mysql_fetch_assoc($actArray); ?>
+							<th ><?php echo $actividad['denominacion']; ?>(<?php echo $actividad['importe']; ?>&euro;)</th>
+							<td><input type="checkbox" onclick="updateImporteRegistroActividad(this)" name="<?php echo $actividad['idActividad']; ?>" value="<?php echo $actividad['idActividad']; ?>" id="<?php echo $actividad['codigo']; ?>"/></td>
+						</tr>
+						<tr>
+							<?php $actividad = mysql_fetch_assoc($actArray); ?>
+							<th ><?php echo $actividad['denominacion']; ?>(<?php echo $actividad['importe']; ?>&euro;)</th>
+							<td><input type="checkbox" onclick="updateImporteRegistroActividad(this)" name="<?php echo $actividad['idActividad']; ?>" value="<?php echo $actividad['idActividad']; ?>" id="<?php echo $actividad['codigo']; ?>"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<th>Importe</th>
+				<td><input type="text" name="importe" id="importe" value="5" readonly/>&euro;</td>
 			</tr>
 			<tr>
 				<td colspan="2">

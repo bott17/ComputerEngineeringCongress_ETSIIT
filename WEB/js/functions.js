@@ -124,3 +124,71 @@ function validaRegistro(){
 	}
 	
 }
+
+function updateImporteRegistroCuota(){
+	var cuota = document.getElementById('cuota').value;
+	var importe;
+	
+	switch(cuota){
+		case 'Estudiante':
+			document.getElementById('alhambra').checked = false;
+			document.getElementById('alhambra').disabled = false;
+			document.getElementById('sierra_nevada').checked = false;
+			document.getElementById('sierra_nevada').disabled = false;
+			document.getElementById('cena_gala').checked = false;
+			document.getElementById('cena_gala').disabled = false;
+			importe = 5;
+			break;
+		case 'Investigador':
+			document.getElementById('alhambra').checked = false;
+			document.getElementById('alhambra').disabled = false;
+			document.getElementById('sierra_nevada').checked = false;
+			document.getElementById('sierra_nevada').disabled = false;
+			document.getElementById('cena_gala').checked = true;
+			document.getElementById('cena_gala').disabled = true;
+			importe = 10;
+			break;
+		case 'Premium':
+			document.getElementById('alhambra').checked = true;
+			document.getElementById('alhambra').disabled = true;
+			document.getElementById('sierra_nevada').checked = true;
+			document.getElementById('sierra_nevada').disabled = true;
+			document.getElementById('cena_gala').checked = true;
+			document.getElementById('cena_gala').disabled = true;
+			importe = 20;
+			break;		
+	}	
+	document.getElementById('importe').value = importe;
+	
+}
+
+function updateImporteRegistroActividad(cb){
+	var importe = parseFloat(document.getElementById('importe').value);
+	if(cb.checked){
+		switch (cb.id){
+			case 'alhambra':
+				importe += 4.5;
+				break;	
+			case 'sierra_nevada':
+				importe += 9;
+				break;
+			case 'cena_gala':
+				importe += 7;
+				break;					
+		}
+	}
+	else{
+		switch (cb.id){
+			case 'alhambra':
+				importe -= 4.5;
+				break;	
+			case 'sierra_nevada':
+				importe -= 9;
+				break;
+			case 'cena_gala':
+				importe -= 7;
+				break;					
+		}		
+	}
+	document.getElementById('importe').value = importe;
+}
