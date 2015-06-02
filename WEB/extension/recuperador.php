@@ -113,6 +113,15 @@ function getPassword($email){
 	return $response;	
 }
 
+function changePassword($email, $password){
+	$link = connect();	
+	$pasV = md5($password);
+	$query = 'update usuario set Password = "' .$pasV . '" where Correo = "' .$email. '"';
+	mysql_query($query, $link);
+		
+	$link = null;
+}
+
 
 function get_web_page($url) {
     $options = array(

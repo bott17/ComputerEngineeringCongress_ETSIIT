@@ -21,7 +21,9 @@
 				
 		    } else if ($filtro == "restablecer"){
 		        $asunto = "Reestablecer contraseña";
-				$body = "Has solicitado reestablecer tu password...";
+				$password = newPass();
+				changePassword($email, $password);
+				$body = "Has solicitado reestablecer tu password... Nuevo password: ". $password;
 				$body2 = "Solicitud de restablecimiento de password usuario " + $email;
 		    }
 			
@@ -107,5 +109,15 @@
     } else if (isset($_POST['restablecer'])){
         sendEmail("restablecer");
     }
+}
+	
+function newPass(){
+	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < 10; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
 	?>
