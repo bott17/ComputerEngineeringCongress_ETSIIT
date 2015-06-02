@@ -122,6 +122,20 @@ function changePassword($email, $password){
 	$link = null;
 }
 
+function checkUser($email){
+	$link = connect();	
+	$query = 'select idUsuario from usuario where correo = "' .$email. '"';
+	$result = mysql_query($query, $link);
+	$result = mysql_fetch_assoc($result);
+	
+	if($result != ""){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 
 function get_web_page($url) {
     $options = array(

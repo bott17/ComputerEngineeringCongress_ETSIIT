@@ -4,7 +4,7 @@
 	
 		$email = $_POST['email'];
 		
-		if($email != ""){
+		if($email != "" && checkUser($email)){
 	
 			require("./lib/phpmailer/PHPMailerAutoload.php");
 			require("./lib/phpmailer/class.smtp.php");
