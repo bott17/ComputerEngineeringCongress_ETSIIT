@@ -25,6 +25,8 @@
 		
 		editarActividad($idAct, $nombreAct, $fechaAct, $rutaAct, $textoAct);
 		
+		header('location: ./index.php?sec=actividades');
+		
 	}
 }
 	
