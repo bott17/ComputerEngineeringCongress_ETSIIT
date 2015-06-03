@@ -208,3 +208,26 @@ function updateImporteRegistroActividad(cb){
 	}
 	document.getElementById('importe').value = importe;
 }
+
+function popitup(url) {
+	newwindow=window.open(url,'name','height=400,width=400');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+function addHotel(rb){
+	var dev = "";
+	if(rb.value != "no")
+		dev = rb.value;
+	document.getElementById('hotel').value = dev;
+}
+
+function CloseMySelf() {
+	var rb = document.getElementById('hotel');
+    try {
+        window.opener.addHotel(rb);        
+    }
+    catch (err) {}
+    window.close();
+    return false;
+}

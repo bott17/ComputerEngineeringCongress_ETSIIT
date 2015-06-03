@@ -224,4 +224,22 @@ function get_web_page($url) {
     return $content;
  }
 
+function searchHoteles(){
+	$link = connect();	
+	$query = 'select * from hotel';
+	$result = mysql_query($query,$link);	
+	$link = null;
+	return $result;	
+}
+
+function searchHotel($nom){
+	$link = connect();	
+	$query = 'select * from hotel where nombre = "'.$nom.'"';
+	$result = mysql_query($query, $link);	
+	$link = null;
+	return mysql_fetch_assoc($result);		
+}
+
+function insertUsuarioHotel($nom,$user,$ent,$dal,$tip){}
+
 ?>

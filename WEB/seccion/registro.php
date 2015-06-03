@@ -18,6 +18,11 @@
 	$act2 = "";
 	$act3 = "";
 	
+	$hot = "";
+	$ent = "";
+	$sal = "";
+	$tip = "";
+	
 	if(isset($_REQUEST['bRegistrar'])){
 		$nom = $_REQUEST['nombre'];
 		$ape = $_REQUEST['apellidos'];
@@ -31,6 +36,11 @@
 		$act1 = $_REQUEST['1'];
 		$act2 = $_REQUEST['2'];
 		$act3 = $_REQUEST['3'];	
+		
+		$hot = $_REQUEST['hotel'];
+		$ent = $_REQUEST['entrada'];
+		$sal = $_REQUEST['salida'];
+		$tip = $_REQUEST['tipoHab'];
 		
 		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo,$imp);
 		
@@ -106,6 +116,32 @@
 					</table>
 				</td>
 			</tr>
+			<tr>
+				<th rowspan="2">Hotel</th>
+				<td></td>				 
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2"><b>Hotel&emsp;</b><input type="text" name="hotel" id="hotel" readonly/>&emsp;<a href="#" onclick="return popitup('hoteles.php')">Ver hoteles</a></td>						
+						</tr>
+						<tr>
+							<td><b>Entrada&emsp;</b><input type="text" name="entrada" id="" /></td>
+							<td><b>Salida&emsp;</b><input type="text" name="salida" id="" /></td>						
+						</tr>
+						<tr>
+							<td colspan="2"><b>Tipo de habitacion&emsp;</b>
+								<select name="tipoHab" id="" />
+									<option>Normal</option>
+									<option>Doble</option>
+								</select>								
+							</td>
+											
+						</tr>
+					</table>
+				</td>
+			</tr>				
 			<tr>
 				<th>Importe</th>
 				<td><input type="text" name="importe" id="importe" value="5" readonly/>&euro;</td>
