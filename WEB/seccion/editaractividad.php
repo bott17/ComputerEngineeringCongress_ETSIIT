@@ -10,10 +10,10 @@
 	$actividad = $listaActividades[$act+1];
 	
 	$idAct = $actividad[0];
-		$nombreAct =  $actividad[1];
-		$fechaAct =  $actividad[2];
-		$rutaAct =  $actividad[3];
-		$textoAct =  $actividad[4];
+	$nombreAct =  $actividad[1];
+	$fechaAct =  $actividad[2];
+	$rutaAct =  $actividad[3];
+	$textoAct =  $actividad[4];
 	
 	if(isset($_REQUEST['btnEditar'])){
 		
