@@ -1,6 +1,14 @@
 <?php
 
 	$arrayCuotas = searchQuotaALL();
+	
+	$listaCuotas[] = 0;
+	$tipoUsuario=0;
+	
+	if (isset($_SESSION['usuario'])) {
+		$tipoUsuario = $_SESSION['tipo'];
+		
+	}
 
 ?>
 <div class='mainContent'>
@@ -9,9 +17,27 @@
 		Cuotas de isncripci&oacute;n:
 		<?php 
 		
+		$contador = 0;
 			while($cuota = mysql_fetch_assoc($arrayCuotas)){
-				echo '<li><b>'.$cuota['denominacion'].' ('.$cuota['importe'].'&euro;)</b><br>'.$cuota['descripcion'].'<br><br></li>';				
+				echo '<li>
+				<b>'.$cuota['denominacion'].' ('.$cuota['importe'].'&euro;) 
+				<a href="index.php?sec=editcuota&cuot=' .$contador. '" class="editar"> Editar</a></b><br>
+					'.$cuota['descripcion'].'<br><br></li>';
+				$contador++;	
+				
+				$temp = array($cuota['denominacion'], $cuota['importe'], $cuota['descripcion']);
+				array_push($listaCuotas, $temp);			
 			}
+			
+			$_SESSION['listacuotas'] = $listaCuotas;
+			
+			if($tipoUsuario != 1){
+			 echo '<style type="text/css">
+		        .editar{
+		            display: none;
+		        }
+        </style>';
+		}
 		
 		?>
 	</ul>
