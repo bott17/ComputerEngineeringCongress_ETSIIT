@@ -142,6 +142,14 @@ function editarActividad($idAct, $nombreAct, $fechaAct, $rutaAct, $textoAct){
 	$link = null;
 		
 }
+function editarCuota($idCout, $nombreCuot, $precioCuot, $descripCuot){
+	$link = connect();	
+	$query ="update cuota set denominacion='" .$nombreCuot. "' ,descripcion='" .$descripCuot. "'  
+		,importe='" .$precioCuot. "' where denominacion='" .$idCout. "'";
+	mysql_query($query, $link);
+	$link = null;
+		
+}
 
 function searchUsusario($nom){
 	$link = connect();	

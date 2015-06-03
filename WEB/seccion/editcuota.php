@@ -13,6 +13,19 @@
 		$nombreCuot =  $cuota[0];
 		$precioCuot =  $cuota[1];
 		$descripCuot=  $cuota[2];
+		
+		if(isset($_REQUEST['btnEditar'])){
+		
+		$idCout = $cuota[0];
+		$nombreCuot = $_REQUEST['nombreAct'];
+		$precioCuot = $_REQUEST['fechaAct'];
+		$descripCuot = $_REQUEST['rutaAct'];
+		
+		editarCuota($idCout, $nombreCuot, $precioCuot, $descripCuot);
+		
+		header('location: ./index.php?sec=inscripcion');
+		
+	}
 	
 	}
 	
