@@ -2,7 +2,8 @@
 
 	$arrayActividades = searchActALL();
 	
-	$listaActividades;
+	$listaActividades[] = 0;
+		
 
 ?>
 <div class='mainContent'>
@@ -15,7 +16,7 @@
 			$actividad = mysql_fetch_assoc($arrayTemporal); 
 			echo 
 				"<div id=" .$actividad['codigo']. " class='actividad'>
-				<a href='index.php?sec=editactividad&act=" .$contador. "' class='editar'>holaaa</a>
+				<a href='index.php?sec=editactividad&act=" .$contador. "' class='editar'>Editar</a>
 					<h2>" .$actividad['denominacion']. " ".$actividad['FechaHora']. "</h2> 
 					
 					<div id='secIzq'><img src=" .$actividad['foto']. " alt=''/>
@@ -30,9 +31,12 @@
 					</div>
 				</div>";
 			
-			array_push($listaActividades, array($actividad['codigo'], $actividad['denominacion'], $actividad['FechaHora'],
-				$actividad['foto'], $actividad['descripcion']));
+				$temp = array($actividad['codigo'], $actividad['denominacion'], $actividad['FechaHora'],
+					$actividad['foto'], $actividad['descripcion']);
+				array_push($listaActividades, $temp);
 		}
+
+		$_SESSION['listaactividades'] = $listaActividades;
 	?>
 	
 	<!--<?php $actividad = mysql_fetch_assoc($arrayActividades); ?>

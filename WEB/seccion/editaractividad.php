@@ -1,41 +1,69 @@
 <?php
-	global $listaActividades;
-	$arrayTemporal = $listaActividades;
+
+	if(isset($_SESSION['listaactividades'])){
+		$listaActividades = $_SESSION['listaactividades'];
 	
 	
-	for($contador = 0; $contador < count($arrayTemporal); $contador++) {
-		if($contador == $act){
-			$actividad = $arrayTemporal[$contador];
-			break;
-		} 
+	$act = $_GET['act'];
+	$actividad;
+	
+	$actividad = $listaActividades[$act+1];
+	
+	$idAct = $actividad[0];
+		$nombreAct =  $actividad[1];
+		$fechaAct =  $actividad[2];
+		$rutaAct =  $actividad[3];
+		$textoAct =  $actividad[4];
+	
+	if(isset($_REQUEST['btnEditar'])){
+		
+		$idAct = $actividad[0];
+		$nombreAct = $_REQUEST['nombreAct'];
+		$fechaAct = $_REQUEST['fechaAct'];
+		$rutaAct = $_REQUEST['rutaAct'];
+		$textoAct = $_REQUEST['textoAct'];
+		
+		editarActividad($idAct, $nombreAct, $fechaAct, $rutaAct, $textoAct);
+		
 	}
+}
 	
 	
 ?>
 <div class='mainContent'>
-	<div class='actividad'>
-		<h2>Editar actividad</h2>
+		<ul>
+			<li><h2>Editar actividad</h2></li>
+			<li>
 		<form method="post" action="">
 			<table>
 				<tr>
-					<th>Correo</th>
-					<td><input type="text" name="correo" value="<?php echo $cor; ?>"/></td>
+					<th>Nombre de actividad</th>
+					<td><input type="text" name="nombreAct" value="<?php echo $nombreAct; ?>"/></td>
 				</tr>
 				<tr>
-					<th>Contraseña</th>
-					<td><input type="password" name="pass" /></td>
+					<th>Fecha</th>
+					<td><input type="text" name="fechaAct" value="<?php echo $fechaAct; ?>" /></td>
+				</tr>
+				<tr>
+					<th>Ruta de la foto</th>
+					<td><input type="text" name="rutaAct" value="<?php echo $rutaAct; ?>" /></td>
+				</tr>
+				<tr>
+					<th colspan='2'>Descripcion</th>
+				</tr>
+				<tr>
+					<td colspan='2'><textarea id='textoAct' rows='10' name='textoAct' 
+						value='<?php echo $actividad[4]; ?>'><?php echo $textoAct; ?></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" value="Entrar" name="bLogin" />
+						<input type="submit" value="Editar" name="btnEditar" />
 					</td>
 				</tr>
-				<tr><td colspan="2"><?php echo $mensaje; ?></td></tr>
-				<tr><td colspan="2"><a href="index.php?sec=olvidos">Olvide mi contraseña</a></td></tr>
 			</table>		
 		</form>
+		</li>
+		</ul>
 	</div>
-</div>
-<!-- para las cajas con enlaces -->
- <?php include './estructura/boxes.php';?>
- <br class='clearfloat' />
+	<br />
+<br />
