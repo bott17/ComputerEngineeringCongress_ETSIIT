@@ -30,6 +30,14 @@
 			}
 			
 			$_SESSION['listacuotas'] = $listaCuotas;
+			
+			if($tipoUsuario != 1){
+			 echo '<style type="text/css">
+		        .editar{
+		            display: none;
+		        }
+        </style>';
+		}
 		
 		?>
 	</ul>
