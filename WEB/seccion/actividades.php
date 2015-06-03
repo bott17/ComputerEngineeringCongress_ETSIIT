@@ -3,6 +3,12 @@
 	$arrayActividades = searchActALL();
 	
 	$listaActividades[] = 0;
+	$tipoUsuario=0;
+	
+	if (isset($_SESSION['usuario'])) {
+		$tipoUsuario = $_SESSION['tipo'];
+		
+	}
 		
 
 ?>
@@ -37,6 +43,14 @@
 		}
 
 		$_SESSION['listaactividades'] = $listaActividades;
+		
+		if($tipoUsuario != 1){
+			 echo '<style type="text/css">
+		        .editar{
+		            display: none;
+		        }
+        </style>';
+		}
 	?>
 	
 	<!--<?php $actividad = mysql_fetch_assoc($arrayActividades); ?>
