@@ -39,6 +39,9 @@ switch ($seccion) {
 	case 'editactividad':
 		include './seccion/editaractividad.php';
 		break;
+	case 'editcuota':
+		include './seccion/editcuota.php';
+		break;
 	default :
 		include './seccion/presentacion.php';
 		break;
