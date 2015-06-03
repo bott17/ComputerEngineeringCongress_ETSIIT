@@ -22,6 +22,15 @@ function searchActALL(){
 		
 }
 
+function getCongresistas(){
+	$link = connect();	
+	$query = "select * from usuario where tipo = 0";
+	$result = mysql_query($query, $link);	
+	$link = null;
+	return $result;
+		
+}
+
 function searchAct($cod){		
 	$link = connect();	
 	$query = 'select * from actividad where codigo = "'.$cod.'"';
@@ -110,6 +119,7 @@ function loginUsuario($cor,$pas) {
     	if($user['Password']==$hash){
     		@session_start();
 			$_SESSION['usuario']=$user['Nombre'];
+			$_SESSION['tipo']=$user['tipo'];
 			header('location: ./index.php');
     	}
 		else{
