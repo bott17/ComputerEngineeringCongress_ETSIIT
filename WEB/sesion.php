@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
 <?php
-	@session_start();
-	$usu = $_SESSION['usuario'];
+	if (isset($_SESSION['usuario'])) {
+		$usu = $_SESSION['usuario'];
+		$tipoUsuario = $_SESSION['tipo'];
+		session_start();
+	}
 	$seccion="";
 	$ponencia="";
 	
