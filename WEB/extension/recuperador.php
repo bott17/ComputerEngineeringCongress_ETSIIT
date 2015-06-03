@@ -134,6 +134,15 @@ function loginUsuario($cor,$pas) {
  
 }
 
+function editarActividad($idAct, $nombreAct, $fechaAct, $rutaAct, $textoAct){
+	$link = connect();	
+	$query ="update actividad set denominacion='" .$nombreAct. "' ,FechaHora='" .$fechaAct. "' ,descripcion='"
+		.$textoAct. "' ,foto='" .$rutaAct. "' where codigo='" .$idAct. "'";
+	mysql_query($query, $link);
+	$link = null;
+		
+}
+
 function searchUsusario($nom){
 	$link = connect();	
 	$query = 'select * from usuario where nombre = "'.$nom.'"';

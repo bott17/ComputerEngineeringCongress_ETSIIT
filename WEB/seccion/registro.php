@@ -2,7 +2,7 @@
 
 	if(empty($usuario)){}
 
-	echo $usuario;
+	//echo $usuario;
 
 	$nom = "";
 	$ape = "";

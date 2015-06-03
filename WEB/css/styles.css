@@ -70,6 +70,18 @@ padding:20px 0;
     box-shadow: 0 3px #1E1E1E;
 
 }
+.editar{
+	text-shadow:none;
+	color:rgba(74, 251, 13, 1);
+	padding:5px 20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-decoration:none;
+	background:#2E2E2E;
+	border-radius:0 0 5px 5px;
+    box-shadow: 0 3px #1E1E1E;
+}
+
 .box p a:hover {
 	text-shadow:none;
 	color:#ffffff;
@@ -237,6 +249,12 @@ padding:20px 0;
 }
 
 .actividad #secDer a:hover{
+	background: #0489B1;
+	border-radius:5px;
+    box-shadow: 0 3px #086A87;
+}
+
+.editar:hover{
 	background: #0489B1;
 	border-radius:5px;
     box-shadow: 0 3px #086A87;

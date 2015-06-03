@@ -36,6 +36,9 @@ switch ($seccion) {
 	case 'admincongresistas':
 		include './seccion/congresistas.php';
 		break;
+	case 'editactividad':
+		include './seccion/editaractividad.php';
+		break;
 	default :
 		include './seccion/presentacion.php';
 		break;
