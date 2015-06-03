@@ -1,9 +1,5 @@
 <?php 
 
-	if(empty($usuario)){}
-
-	echo $usuario;
-
 	$nom = "";
 	$ape = "";
 	$cen = "";
@@ -48,6 +44,8 @@
 		insertActividadUsuario($nom, $act2);
 		insertActividadUsuario($nom, $act3);
 		
+		insertUsuarioHotel($hot,$nom,$ent,$sal,$tip);		
+						
 	}
 ?>
 <div class='mainContent'>

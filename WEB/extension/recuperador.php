@@ -103,7 +103,7 @@ function insertActividadUsuario($nom,$act){
 	$user = searchUsusario($nom);
 	$link = connect();	
 	if(!empty($act)){
-		$query = 'INSERT INTO `UsuarioActividad`(`idActividad`, `idUsuario`) VALUES ('.$act.','.$user['idUsuario'].')';
+		$query = 'INSERT INTO `usuarioactividad`(`idActividad`, `idUsuario`) VALUES ('.$act.','.$user['idUsuario'].')';
 		mysql_query($query, $link);
 	}		
 	$link = null;	
@@ -187,7 +187,7 @@ function checkUser($email){
 
 function searchActividadesUsuario($id){
 	$link = connect();	
-	$query = 'SELECT * FROM `UsuarioActividad` WHERE idUsuario = '.$id;
+	$query = 'SELECT * FROM `usuarioactividad` WHERE idUsuario = '.$id;
 	$result = mysql_query($query,$link);	
 	$link = null;
 	return $result;	
@@ -240,6 +240,18 @@ function searchHotel($nom){
 	return mysql_fetch_assoc($result);		
 }
 
-function insertUsuarioHotel($nom,$user,$ent,$dal,$tip){}
+function insertUsuarioHotel($nom,$user,$ent,$sal,$tip){
+	if(!empty($nom) && !empty($ent) && !empty($sal)){
+		$idU = searchUsusario($user);
+		$idH = searchHotel($nom);
+		
+		$link = connect();	
+		$query = 'INSERT INTO `usuariohotel`(`idHotel`, `idUsuario`, `fechaEntrada`, `fechaSalida`, `TipoHabitacion`) 
+					VALUES ('.$idH['idHotel'].','.$idU['idUsuario'].',"'.$ent.'","'.$sal.'","'.$tip.'")';
+		mysql_query($query, $link);
+		$link = null;		
+		
+	}	
+}
 
 ?>
