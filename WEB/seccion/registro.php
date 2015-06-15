@@ -1,5 +1,7 @@
 <?php 
 
+	$arrayActividades = searchActALL();
+
 	$nom = "";
 	$ape = "";
 	$cen = "";
@@ -82,7 +84,8 @@
 			</tr>
 			<tr>
 				<th>Elige cuota</th>
-				<td><select name="cuota" id="cuota" onchange="updateImporteRegistroCuota()">
+				<td><select name="cuota" id="cuota" onchange="updateImporteRegistroCuota(); updateActividadesIncluidas()">
+					<option value:"default">Escoje una</option>
 					<?php 
 						$cuota = searchQuotaALL();
 						while($fila = mysql_fetch_assoc($cuota)){
@@ -91,8 +94,15 @@
 					?>
 				</select></td>
 			</tr>
+			
 			<tr>
-				<th>Actividades</th>
+				<td>
+					<div id="loadActivity"></div>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Actividades extras</th>
 				<td>
 					<?php $actArray = searchActividades(); ?>
 					<table>
@@ -126,7 +136,9 @@
 						</tr>
 						<tr>
 							<td><b>Entrada&emsp;</b><input type="text" name="entrada" id="" /></td>
-							<td><b>Salida&emsp;</b><input type="text" name="salida" id="" /></td>						
+						</tr>
+						<tr>
+							<td><b>Salida&emsp;</b><input type="text" name="salida" id="" /></td>
 						</tr>
 						<tr>
 							<td colspan="2"><b>Tipo de habitacion&emsp;</b>

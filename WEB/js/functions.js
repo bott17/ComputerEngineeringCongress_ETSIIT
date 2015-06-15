@@ -1,3 +1,18 @@
+function updateActividadesIncluidas(){
+	
+	var cuota = document.getElementById('cuota').value;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("loadActivity").innerHTML = xmlhttp.responseText;
+            }
+       };
+        xmlhttp.open("GET", "componentes/preview.php", true);
+        xmlhttp.send();
+}
+
+
+
 function contacto(){
 	var email = document.getElementById('email').value;
 	var nombre = document.getElementById('nombre').value;
@@ -146,6 +161,7 @@ function updateImporteRegistroCuota(){
 	var importe;
 	
 	switch(cuota){
+		default:
 		case 'Estudiante':
 			document.getElementById('alhambra').checked = false;
 			document.getElementById('alhambra').disabled = false;
@@ -172,7 +188,8 @@ function updateImporteRegistroCuota(){
 			document.getElementById('cena_gala').checked = true;
 			document.getElementById('cena_gala').disabled = true;
 			importe = 20;
-			break;		
+			break;
+				
 	}	
 	document.getElementById('importe').value = importe;
 	

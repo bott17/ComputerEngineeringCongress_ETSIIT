@@ -2,7 +2,13 @@
 Design by Free Responsive Templates
 http://www.free-responsive-templates.com
 Released for free under a Creative Commons Attribution 3.0 Unported License (CC BY 3.0)
-*/ 
+*/
+
+.preview{
+	width: 50%;
+	height: 50%;
+}
+ 
 * {
 	margin:0;
 	padding:0;
