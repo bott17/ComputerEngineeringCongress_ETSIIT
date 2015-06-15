@@ -13,6 +13,26 @@ function connect(){
 	return $link;	
 }
 
+function getActividadesCuota($cuota){
+	
+	$link = connect();	
+	$query = "select idCuota from cuota where denominacion = '" .$cuota. "'";
+	$result = mysql_query($query, $link);
+	if (!$result) {
+   		throw new Exception("Query fail");
+	}	
+	// Obtener el id de la cuota
+	$idCuota = mysql_fetch_assoc($result);
+	$idCuota = $idCuota['idCuota'];
+	
+	$query = "select act.codigo, act.denominacion, act.FechaHora, act.foto, act.descripcion from actividad act INNER JOIN (select * from cuotasactividades where idcuota=" .$idCuota. ") cuotact on cuotact.idactividad = act.idActividad";
+	
+	$result = mysql_query($query, $link);	
+	$link = null;
+	return $result;
+		
+}
+
 function searchActALL(){
 	$link = connect();	
 	$query = "select * from actividad";

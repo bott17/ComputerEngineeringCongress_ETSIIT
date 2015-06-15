@@ -1,5 +1,19 @@
 <?php 
 
+	$arrayActividades = searchActALL();
+	$listaActividades[] = 0;
+	
+	$arrayTemporal = $arrayActividades;
+	for($contador = 0; $contador < mysql_num_rows($arrayTemporal); $contador++) {
+		$actividad = mysql_fetch_assoc($arrayTemporal); 
+				
+			$temp = array($actividad['codigo'], $actividad['denominacion'], $actividad['FechaHora'],
+				$actividad['foto'], $actividad['descripcion']);
+			array_push($listaActividades, $temp);
+	}
+
+	$_SESSION['listaactividades'] = $listaActividades;
+
 	$nom = "";
 	$ape = "";
 	$cen = "";
@@ -82,7 +96,8 @@
 			</tr>
 			<tr>
 				<th>Elige cuota</th>
-				<td><select name="cuota" id="cuota" onchange="updateImporteRegistroCuota()">
+				<td><select name="cuota" id="cuota" onchange="updateImporteRegistroCuota(); updateActividadesIncluidas()">
+					<option value:"default">Escoje una</option>
 					<?php 
 						$cuota = searchQuotaALL();
 						while($fila = mysql_fetch_assoc($cuota)){
@@ -91,8 +106,15 @@
 					?>
 				</select></td>
 			</tr>
+			
 			<tr>
-				<th>Actividades</th>
+				<td>
+					<div id="loadActivity"></div>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Actividades extras</th>
 				<td>
 					<?php $actArray = searchActividades(); ?>
 					<table>
@@ -126,7 +148,9 @@
 						</tr>
 						<tr>
 							<td><b>Entrada&emsp;</b><input type="text" name="entrada" id="" /></td>
-							<td><b>Salida&emsp;</b><input type="text" name="salida" id="" /></td>						
+						</tr>
+						<tr>
+							<td><b>Salida&emsp;</b><input type="text" name="salida" id="" /></td>
 						</tr>
 						<tr>
 							<td colspan="2"><b>Tipo de habitacion&emsp;</b>
