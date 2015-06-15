@@ -1,6 +1,18 @@
 <?php 
 
 	$arrayActividades = searchActALL();
+	$listaActividades[] = 0;
+	
+	$arrayTemporal = $arrayActividades;
+	for($contador = 0; $contador < mysql_num_rows($arrayTemporal); $contador++) {
+		$actividad = mysql_fetch_assoc($arrayTemporal); 
+				
+			$temp = array($actividad['codigo'], $actividad['denominacion'], $actividad['FechaHora'],
+				$actividad['foto'], $actividad['descripcion']);
+			array_push($listaActividades, $temp);
+	}
+
+	$_SESSION['listaactividades'] = $listaActividades;
 
 	$nom = "";
 	$ape = "";

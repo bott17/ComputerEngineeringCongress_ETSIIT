@@ -1,21 +1,33 @@
 <?php
 	
-	$titulo = $_POST["titulo"];
-	$fecha = $_POST["fecha"];
-	$url = $_POST["url"];
-	$descripcion = $_POST["descripcion"];
-
+	include '../extension/recuperador.php';
+	
+	$cuota = $_REQUEST["cuota"];
+	
+	$arrayActividades = getActividadesCuota($cuota);
 
 ?>
 
-<div class="mainContent.preview">
-		<h2 id='tituloActividad'><?php echo $titulo ?></h2>
-		<h1 id'fechaActividad'><?php echo $fecha ?></h1>
-		<img id="imgActividad" src=<?php echo  "$url" ?>/>
-		<p>
-		<br />
-		<span id="descripcionActividad"> <?php echo $descripcion ?></span>
-		<br /><br/>
-		<b>Precio: Incluido</b>;
-	</p>
+<div class= "preview">
+	
+	<h2> Actividades incluidas</h2>
+	
+	<?php
+	$arrayTemporal = $arrayActividades;
+		for($contador = 0; $contador < mysql_num_rows($arrayTemporal); $contador++) {
+			$actividad = mysql_fetch_assoc($arrayTemporal); 
+			echo "
+				<h2 id='tituloActividad'>".$actividad["denominacion"]."</h2>
+				<h1 id'fechaActividad'>".$actividad["FechaHora"]."</h1>
+				<img id='imgActividad' src=".$actividad["foto"].">
+				<p>
+				<br />
+				<span id='descripcionActividad'>" .$actividad["descripcion"]. "</span>
+				<br /><br/>
+				<b>Precio: Incluido</b>;
+				</p>
+				"
+			;
+		}
+	?>
 </div>

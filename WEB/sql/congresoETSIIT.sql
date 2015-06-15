@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 03, 2015 at 02:36 PM
--- Server version: 5.5.43-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-06-2015 a las 21:36:43
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,31 +17,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `congresoETSIIT`
+-- Base de datos: `congresoetsiit`
 --
-CREATE DATABASE IF NOT EXISTS `congresoETSIIT` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `congresoETSIIT`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `actividad`
+-- Estructura de tabla para la tabla `actividad`
 --
 
-DROP TABLE IF EXISTS `actividad`;
 CREATE TABLE IF NOT EXISTS `actividad` (
-  `idActividad` int(11) NOT NULL AUTO_INCREMENT,
+`idActividad` int(11) NOT NULL,
   `codigo` varchar(100) NOT NULL,
   `denominacion` varchar(50) NOT NULL,
   `FechaHora` varchar(50) NOT NULL,
   `descripcion` varchar(10000) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `importe` double NOT NULL,
-  PRIMARY KEY (`idActividad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `importe` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `actividad`
+-- Volcado de datos para la tabla `actividad`
 --
 
 INSERT INTO `actividad` (`idActividad`, `codigo`, `denominacion`, `FechaHora`, `descripcion`, `foto`, `importe`) VALUES
@@ -52,20 +48,18 @@ INSERT INTO `actividad` (`idActividad`, `codigo`, `denominacion`, `FechaHora`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cuota`
+-- Estructura de tabla para la tabla `cuota`
 --
 
-DROP TABLE IF EXISTS `cuota`;
 CREATE TABLE IF NOT EXISTS `cuota` (
-  `idCuota` int(11) NOT NULL AUTO_INCREMENT,
+`idCuota` int(11) NOT NULL,
   `denominacion` varchar(50) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `importe` double NOT NULL,
-  PRIMARY KEY (`idCuota`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `importe` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cuota`
+-- Volcado de datos para la tabla `cuota`
 --
 
 INSERT INTO `cuota` (`idCuota`, `denominacion`, `descripcion`, `importe`) VALUES
@@ -76,20 +70,39 @@ INSERT INTO `cuota` (`idCuota`, `denominacion`, `descripcion`, `importe`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel`
+-- Estructura de tabla para la tabla `cuotasactividades`
 --
 
-DROP TABLE IF EXISTS `hotel`;
+CREATE TABLE IF NOT EXISTS `cuotasactividades` (
+  `idcuota` int(11) NOT NULL,
+  `idactividad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cuotasactividades`
+--
+
+INSERT INTO `cuotasactividades` (`idcuota`, `idactividad`) VALUES
+(2, 3),
+(3, 1),
+(3, 2),
+(3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `hotel`
+--
+
 CREATE TABLE IF NOT EXISTS `hotel` (
-  `idHotel` int(11) NOT NULL AUTO_INCREMENT,
+`idHotel` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `foto` varchar(1000) NOT NULL,
-  `precio` double NOT NULL,
-  PRIMARY KEY (`idHotel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `precio` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hotel`
+-- Volcado de datos para la tabla `hotel`
 --
 
 INSERT INTO `hotel` (`idHotel`, `nombre`, `foto`, `precio`) VALUES
@@ -100,12 +113,11 @@ INSERT INTO `hotel` (`idHotel`, `nombre`, `foto`, `precio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+`idUsuario` int(11) NOT NULL,
   `tipo` int(1) NOT NULL DEFAULT '0',
   `Nombre` varchar(50) NOT NULL,
   `Apellidos` varchar(200) NOT NULL,
@@ -114,13 +126,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Correo` varchar(200) NOT NULL,
   `Password` varchar(100) NOT NULL,
   `idCuota` int(11) NOT NULL,
-  `importe` double NOT NULL,
-  PRIMARY KEY (`idUsuario`),
-  KEY `idCuota` (`idCuota`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `importe` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `tipo`, `Nombre`, `Apellidos`, `Centro de trabajo`, `Telefono`, `Correo`, `Password`, `idCuota`, `importe`) VALUES
@@ -132,19 +142,16 @@ INSERT INTO `usuario` (`idUsuario`, `tipo`, `Nombre`, `Apellidos`, `Centro de tr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarioactividad`
+-- Estructura de tabla para la tabla `usuarioactividad`
 --
 
-DROP TABLE IF EXISTS `usuarioactividad`;
 CREATE TABLE IF NOT EXISTS `usuarioactividad` (
   `idActividad` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  PRIMARY KEY (`idActividad`,`idUsuario`),
-  KEY `idUsuario` (`idUsuario`)
+  `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarioactividad`
+-- Volcado de datos para la tabla `usuarioactividad`
 --
 
 INSERT INTO `usuarioactividad` (`idActividad`, `idUsuario`) VALUES
@@ -157,22 +164,19 @@ INSERT INTO `usuarioactividad` (`idActividad`, `idUsuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuariohotel`
+-- Estructura de tabla para la tabla `usuariohotel`
 --
 
-DROP TABLE IF EXISTS `usuariohotel`;
 CREATE TABLE IF NOT EXISTS `usuariohotel` (
-  `idHotel` int(11) NOT NULL AUTO_INCREMENT,
+`idHotel` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `fechaEntrada` varchar(100) NOT NULL,
   `fechaSalida` varchar(100) NOT NULL,
-  `TipoHabitacion` varchar(100) NOT NULL,
-  PRIMARY KEY (`idHotel`,`idUsuario`),
-  KEY `idUsuario` (`idUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `TipoHabitacion` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuariohotel`
+-- Volcado de datos para la tabla `usuariohotel`
 --
 
 INSERT INTO `usuariohotel` (`idHotel`, `idUsuario`, `fechaEntrada`, `fechaSalida`, `TipoHabitacion`) VALUES
@@ -180,27 +184,96 @@ INSERT INTO `usuariohotel` (`idHotel`, `idUsuario`, `fechaEntrada`, `fechaSalida
 (3, 3, '27 junio', '5 julio', 'Doble');
 
 --
--- Constraints for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Constraints for table `usuario`
+-- Indices de la tabla `actividad`
+--
+ALTER TABLE `actividad`
+ ADD PRIMARY KEY (`idActividad`);
+
+--
+-- Indices de la tabla `cuota`
+--
+ALTER TABLE `cuota`
+ ADD PRIMARY KEY (`idCuota`);
+
+--
+-- Indices de la tabla `hotel`
+--
+ALTER TABLE `hotel`
+ ADD PRIMARY KEY (`idHotel`);
+
+--
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCuota`) REFERENCES `cuota` (`idCuota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ ADD PRIMARY KEY (`idUsuario`), ADD KEY `idCuota` (`idCuota`);
 
 --
--- Constraints for table `usuarioactividad`
+-- Indices de la tabla `usuarioactividad`
 --
 ALTER TABLE `usuarioactividad`
-  ADD CONSTRAINT `UsuarioActividad_ibfk_1` FOREIGN KEY (`idActividad`) REFERENCES `actividad` (`idActividad`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `UsuarioActividad_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+ ADD PRIMARY KEY (`idActividad`,`idUsuario`), ADD KEY `idUsuario` (`idUsuario`);
 
 --
--- Constraints for table `usuariohotel`
+-- Indices de la tabla `usuariohotel`
 --
 ALTER TABLE `usuariohotel`
-  ADD CONSTRAINT `UsuarioHotel_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+ ADD PRIMARY KEY (`idHotel`,`idUsuario`), ADD KEY `idUsuario` (`idUsuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `actividad`
+--
+ALTER TABLE `actividad`
+MODIFY `idActividad` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `cuota`
+--
+ALTER TABLE `cuota`
+MODIFY `idCuota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `hotel`
+--
+ALTER TABLE `hotel`
+MODIFY `idHotel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `usuariohotel`
+--
+ALTER TABLE `usuariohotel`
+MODIFY `idHotel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCuota`) REFERENCES `cuota` (`idCuota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `usuarioactividad`
+--
+ALTER TABLE `usuarioactividad`
+ADD CONSTRAINT `UsuarioActividad_ibfk_1` FOREIGN KEY (`idActividad`) REFERENCES `actividad` (`idActividad`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `UsuarioActividad_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuariohotel`
+--
+ALTER TABLE `usuariohotel`
+ADD CONSTRAINT `UsuarioHotel_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,13 +1,15 @@
 function updateActividadesIncluidas(){
 	
 	var cuota = document.getElementById('cuota').value;
+	
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("loadActivity").innerHTML = xmlhttp.responseText;
             }
        };
-        xmlhttp.open("GET", "componentes/preview.php", true);
+       console.log(cuota);
+        xmlhttp.open("GET", "componentes/preview.php?cuota="+ cuota, true);
         xmlhttp.send();
 }
 
