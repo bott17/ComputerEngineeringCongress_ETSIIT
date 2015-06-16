@@ -62,6 +62,19 @@
 						
 	}
 ?>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+    $().ready(function() {
+        var $scrollingDiv = $("#hola");
+
+        $(window).scroll(function(){            
+            $scrollingDiv
+                .stop()
+                .animate({"marginTop": ($(window).scrollTop() )}, "slow" );         
+        });
+    });
+</script>
+
 <div class='mainContent'>
 	<h2>Registro en el congreso</h2>
 	<form method="post" action="" onsubmit="return validaRegistro()">
@@ -144,7 +157,13 @@
 				<td>
 					<table>
 						<tr>
-							<td colspan="2"><b>Hotel&emsp;</b><input type="text" name="hotel" id="hotel" readonly/>&emsp;<a href="#" onclick="return popitup('hoteles.php')">Ver hoteles</a></td>						
+							<td><a href="#" onclick="return popitup('hoteles.php')">Ver hoteles</a></td>
+						</tr>
+						<tr>
+							<td colspan="2"><b>Hotel&emsp;</b><input type="text" name="hotel" id="hotel" readonly/>&emsp;</td>						
+						</tr>
+						<tr>
+							<td colspan="2"><b>Precio&emsp;</b><input type="text" name="precioHotel" id="precioHotel" readonly/>&emsp;</td>						
 						</tr>
 						<tr>
 							<td><b>Entrada&emsp;</b><input type="text" name="entrada" id="" /></td>
@@ -165,8 +184,9 @@
 				</td>
 			</tr>				
 			<tr>
-				<th>Importe</th>
+				<th >Importe</th>
 				<td><input type="text" name="importe" id="importe" value="5" readonly/>&euro;</td>
+				<td><input type="text" name="importe" id="importeCuota" style="display: none"/>;</td>
 			</tr>
 			<tr>
 				<td colspan="2">

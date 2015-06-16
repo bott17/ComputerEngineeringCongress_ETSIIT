@@ -1,7 +1,28 @@
-function updateActividadesIncluidas(){
+function updatePrecio(){
+	var precio = document.getElementById('importe').value;
+	var precioCuota = document.getElementById('importeCuota').value;;
+	var precioHotel = document.getElementById('precioHotel').value;
+	var precioTotal = precio + precioHotel;
+	var precioActividades = precio-precioCuota;
 	
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("recuentoRegistro").innerHTML = xmlhttp.responseText;
+            }
+       };
+       console.log(cuota);
+        xmlhttp.open("GET", "seccion/sidebar/sidebarRegistro.php?cuota="+ precioCuota+"&actividades="+precioActividades+
+        "&hotel="+precioHotel, true);
+        xmlhttp.send();
+	
+}
+
+
+function updateActividadesIncluidas(){
 	var cuota = document.getElementById('cuota').value;
 	
+	if (cuota != "Escoje una"){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -11,6 +32,10 @@ function updateActividadesIncluidas(){
        console.log(cuota);
         xmlhttp.open("GET", "componentes/preview.php?cuota="+ cuota, true);
         xmlhttp.send();
+       }
+        
+        
+        updatePrecio();
 }
 
 
@@ -171,7 +196,7 @@ function updateImporteRegistroCuota(){
 			document.getElementById('sierra_nevada').disabled = false;
 			document.getElementById('cena_gala').checked = false;
 			document.getElementById('cena_gala').disabled = false;
-			importe = 5;
+			importe = 6;
 			break;
 		case 'Investigador':
 			document.getElementById('alhambra').checked = false;
@@ -194,6 +219,7 @@ function updateImporteRegistroCuota(){
 				
 	}	
 	document.getElementById('importe').value = importe;
+	document.getElementById('importeCuota').value = importe;
 	
 }
 
@@ -226,6 +252,8 @@ function updateImporteRegistroActividad(cb){
 		}		
 	}
 	document.getElementById('importe').value = importe;
+	
+	updatePrecio();
 }
 
 function popitup(url) {
@@ -236,15 +264,21 @@ function popitup(url) {
 
 function addHotel(rb){
 	var dev = "";
-	if(rb.value != "no")
-		dev = rb.value;
+	var precio = "";
+	if(rb.value != "no"){
+		var valores = rb.value.split("|");
+		dev = valores[0];
+		precio = "25";
+	}
 	document.getElementById('hotel').value = dev;
+	document.getElementById('precioHotel').value = precio;
 }
 
 function CloseMySelf() {
 	var rb = document.getElementById('hotel');
     try {
-        window.opener.addHotel(rb);        
+        window.opener.addHotel(rb); 
+        window.opener.updatePrecio();       
     }
     catch (err) {}
     window.close();
