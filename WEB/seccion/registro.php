@@ -40,6 +40,50 @@
 		
 		
 		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo,$imp, $act1, $act2, $act3, $hot,$nom,$ent,$sal,$tip);
+		
+		sendEmail($filtro);
+	}
+	
+	function sendEmail($filtro){
+	
+		$email = $_POST['correo'];
+		
+		if($email != "" && checkUser($email)){
+	
+			require("./lib/phpmailer/PHPMailerAutoload.php");
+			require("./lib/phpmailer/class.smtp.php");
+			
+			$sender = "congresowebetsiit@gmail.com";
+			$senderName = "Congreso ETSIIT";
+				
+		    $asunto = "Inscripcion";
+			$body = "has sido inscrito en el congreso";
+			
+			$mail = new PHPMailer();
+			
+			//Configuracion y validacion SMTP:
+			$mail->IsSMTP();
+			
+			// Modo depuracion texto y codigo de errores
+			$mail->SMTPDebug  = false; 
+			
+			$mail->SMTPAuth = true;
+			$mail->Host = 'smtp.gmail.com'; // SMTP a utilizar. Por ej. smtp.elserver.com
+			$mail->Username = 'congresowebetsiit@gmail.com'; // Correo completo a utilizar
+			$mail->Password = 'web12345678'; // Contraseña
+			$mail->SMTPSecure = "tls"; // sets the prefix to the servier
+			$mail->Port = 587; // Puerto a utilizar
+				 
+			//Configuracion del email a enviar
+			$mail->From = $sender; // Desde donde enviamos (Para mostrar)
+			$mail->FromName = $senderName;
+		
+			$mail->AddAddress($email); // Esta es la dirección a donde enviamos
+			$mail->IsHTML(true); // El correo se envía como HTML
+			$mail->Subject = $asunto; // Este es el asunto del email.
+			$mail->Body = $body; // Mensaje a enviar
+			$exito = $mail->Send(); // Envía el correo.
+		}
 	}
 ?>
 <div class='mainContent'>
