@@ -1,0 +1,4 @@
+Se ha corregido:
+	* Ahora se debe definir la ruta completa de la imagen en el archivo de datos de las actividades
+	* Un solo archivo de datos para las actividades
+	* Un solo archivo de datos para las ponencias

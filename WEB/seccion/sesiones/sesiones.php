@@ -24,18 +24,20 @@ $titulo = "Sin sesion";
 $detalles = "Sin sesion";
 $descripcion = "Sin sesion";
 
-$array = explode("\n", file_get_contents($filename));
-// Lectura del contenido del array
-for($contador=0; $contador < count($array); $contador =$contador + 4){
-	
-	// Recuperacion del identificardor, separando lo que hay antes y despues (que seran saltos de linea)
-	$identificador = split("/", $array[$contador]);
-	
-	if(strcmp($identificador[1],$pon) ==0){
-		$titulo = $array[$contador+1];
-		$detalles = $array[$contador+2];
-		$descripcion = $array[$contador+3];
+if(isset($pon)){
+	$array = explode("\n", file_get_contents($filename));
+	// Lectura del contenido del array
+	for($contador=0; $contador < count($array); $contador =$contador + 4){
 		
+		// Recuperacion del identificardor, separando lo que hay antes y despues (que seran saltos de linea)
+		$identificador = split("/", $array[$contador]);
+		
+		if(strcmp($identificador[1],$pon) ==0){
+			$titulo = $array[$contador+1];
+			$detalles = $array[$contador+2];
+			$descripcion = $array[$contador+3];
+			
+		}
 	}
 }
 
