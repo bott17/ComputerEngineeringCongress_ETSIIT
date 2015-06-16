@@ -1,0 +1,3 @@
+Control de cambios:
+	* Ahora al registrar un usuario solo se realiza una conexion a la base de datos
+	* Se envia correo de confirmacion de inscripcion

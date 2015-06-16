@@ -73,7 +73,7 @@ function searchQuota2($id){
 }
 
 
-function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
+function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp, $act1, $act2, $act3, $hot,$nom,$ent,$sal,$tip){
 	$link = connect();	
 	$pasV = md5($pasF);
 	$id = searchQuota($cuo);
@@ -84,29 +84,33 @@ function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
 	
 	switch ($id) {
 		case 2:
-			insertActividadUsuario($nom, 3);
+			insertActividadUsuario($link, $nom, 3);
 			break;
 		
 		case 3:
-			insertActividadUsuario($nom, 1);
-			insertActividadUsuario($nom, 2);
-			insertActividadUsuario($nom, 3);
+			insertActividadUsuario($link, $nom, 1);
+			insertActividadUsuario($link,$nom, 2);
+			insertActividadUsuario($link, $nom, 3);
 			break;
 	}
+	
+	// Insertamos informacion adicional
+	insertActividadUsuario($link, $nom, $act1);
+	insertActividadUsuario($link, $nom, $act2);
+	insertActividadUsuario($link, $nom, $act3);
+	insertUsuarioHotel($link, $hot,$nom,$ent,$sal,$tip);
 	
 	loginUsuario($cor, $pasF);
 		
 	$link = null;
 }
 
-function insertActividadUsuario($nom,$act){
+function insertActividadUsuario($link,$nom,$act){
 	$user = searchUsusario($nom);
-	$link = connect();	
 	if(!empty($act)){
 		$query = 'INSERT INTO `usuarioactividad`(`idActividad`, `idUsuario`) VALUES ('.$act.','.$user['idUsuario'].')';
 		mysql_query($query, $link);
 	}		
-	$link = null;	
 }
 
 function loginUsuario($cor,$pas) {
@@ -257,16 +261,14 @@ function searchHotel($nom){
 	return mysql_fetch_assoc($result);		
 }
 
-function insertUsuarioHotel($nom,$user,$ent,$sal,$tip){
+function insertUsuarioHotel($link,$nom,$user,$ent,$sal,$tip){
 	if(!empty($nom) && !empty($ent) && !empty($sal)){
 		$idU = searchUsusario($user);
 		$idH = searchHotel($nom);
 		
-		$link = connect();	
 		$query = 'INSERT INTO `usuariohotel`(`idHotel`, `idUsuario`, `fechaEntrada`, `fechaSalida`, `TipoHabitacion`) 
 					VALUES ('.$idH['idHotel'].','.$idU['idUsuario'].',"'.$ent.'","'.$sal.'","'.$tip.'")';
 		mysql_query($query, $link);
-		$link = null;		
 		
 	}	
 }
