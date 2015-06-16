@@ -38,14 +38,8 @@
 		$sal = $_REQUEST['salida'];
 		$tip = $_REQUEST['tipoHab'];
 		
-		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo,$imp);
 		
-		insertActividadUsuario($nom, $act1);
-		insertActividadUsuario($nom, $act2);
-		insertActividadUsuario($nom, $act3);
-		
-		insertUsuarioHotel($hot,$nom,$ent,$sal,$tip);		
-						
+		insertUsuario($nom,$ape,$cen,$tel,$cor,$pas,$cuo,$imp, $act1, $act2, $act3, $hot,$nom,$ent,$sal,$tip);
 	}
 ?>
 <div class='mainContent'>

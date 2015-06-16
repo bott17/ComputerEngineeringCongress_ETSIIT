@@ -73,7 +73,7 @@ function searchQuota2($id){
 }
 
 
-function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
+function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp, $act1, $act2, $act3, $hot,$nom,$ent,$sal,$tip){
 	$link = connect();	
 	$pasV = md5($pasF);
 	$id = searchQuota($cuo);
@@ -93,6 +93,12 @@ function insertUsuario($nom,$ape,$cen,$tel,$cor,$pasF,$cuo,$imp){
 			insertActividadUsuario($nom, 3);
 			break;
 	}
+	
+	// Insertamos informacion adicional
+	insertActividadUsuario($nom, $act1);
+	insertActividadUsuario($nom, $act2);
+	insertActividadUsuario($nom, $act3);
+	insertUsuarioHotel($hot,$nom,$ent,$sal,$tip);
 	
 	loginUsuario($cor, $pasF);
 		
