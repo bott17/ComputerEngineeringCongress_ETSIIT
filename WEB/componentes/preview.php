@@ -10,10 +10,10 @@
 
 <div class= "preview">
 	
-	<h2> Actividades incluidas</h2>
-	
 	<?php
-	$arrayTemporal = $arrayActividades;
+	// if($arrayActividades instanceof boolean  ){
+	 	echo "<h2> Actividades incluidas</h2>";
+		$arrayTemporal = $arrayActividades;
 		for($contador = 0; $contador < mysql_num_rows($arrayTemporal); $contador++) {
 			$actividad = mysql_fetch_assoc($arrayTemporal); 
 			echo "
@@ -29,5 +29,6 @@
 				"
 			;
 		}
+	// }
 	?>
 </div>
